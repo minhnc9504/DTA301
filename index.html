@@ -57,7 +57,7 @@
                     <i class="fa-solid fa-bolt mr-1"></i> Ngân hàng câu hỏi
                 </button>
                 <button onclick="switchTab('exam')" class="nav-btn px-3 py-1.5 rounded-lg text-sm font-medium transition text-slate-300 hover:bg-slate-800" data-target="exam">
-                    <i class="fa-solid fa-laptop-code mr-1"></i> Thi thử đề chuẩn
+                    <i class="fa-solid fa-laptop-code mr-1"></i> Thi thử & Luyện thi
                 </button>
                 <button onclick="switchTab('admin')" class="nav-btn px-3 py-1.5 rounded-lg text-sm font-medium transition text-slate-300 hover:bg-slate-800" data-target="admin">
                     <i class="fa-solid fa-gear mr-1"></i> Quản lý đề
@@ -76,14 +76,14 @@
                     <span class="bg-brand-500 text-xs uppercase px-3 py-1 rounded-full font-semibold tracking-wider">Học phần chuyên sâu</span>
                     <h2 class="text-3xl font-bold mt-2">Chào mừng bạn đến với hệ thống ôn thi DTA301</h2>
                     <p class="mt-2 text-slate-200 text-sm leading-relaxed">
-                        Hệ thống tích hợp toàn bộ ngân hàng câu hỏi trắc nghiệm từ 2 đề thi chính thức gần đây (<strong class="text-white">FA 2024</strong> và <strong class="text-white">SU26</strong>), hỗ trợ lọc theo chương, làm bài thi mô phỏng 60 phút có đếm ngược, chấm điểm tự động và tra cứu đáp án chuẩn xác.
+                        Hệ thống tích hợp toàn bộ ngân hàng câu hỏi trắc nghiệm từ 2 đề thi chính thức (<strong class="text-white">FA 2024</strong> và <strong class="text-white">SU26</strong>), hỗ trợ <strong class="text-white">ôn tập tương tác từng câu</strong> (chọn đáp án mới hiện giải thích & mẹo) và <strong class="text-white">luyện tập trong phòng thi</strong>.
                     </p>
                     <div class="mt-4 flex flex-wrap gap-3">
-                        <button onclick="switchTab('exam')" class="bg-white text-brand-900 font-semibold px-4 py-2 rounded-xl text-sm shadow hover:bg-slate-100 transition">
-                            <i class="fa-solid fa-play mr-1 text-brand-600"></i> Bắt đầu thi thử ngay
+                        <button onclick="switchTab('practice')" class="bg-white text-brand-900 font-semibold px-4 py-2 rounded-xl text-sm shadow hover:bg-slate-100 transition">
+                            <i class="fa-solid fa-list-check mr-1 text-brand-600"></i> Ôn tập theo từng câu
                         </button>
-                        <button onclick="switchTab('practice')" class="bg-brand-800 text-white font-semibold px-4 py-2 rounded-xl text-sm shadow hover:bg-brand-700 transition border border-brand-600">
-                            <i class="fa-solid fa-list-check mr-1"></i> Luyện tập theo câu hỏi
+                        <button onclick="switchTab('exam')" class="bg-brand-800 text-white font-semibold px-4 py-2 rounded-xl text-sm shadow hover:bg-brand-700 transition border border-brand-600">
+                            <i class="fa-solid fa-play mr-1"></i> Luyện tập trong thi
                         </button>
                     </div>
                 </div>
@@ -108,15 +108,15 @@
                 <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 flex items-center space-x-4">
                     <div class="bg-purple-100 text-purple-600 p-3 rounded-xl text-xl font-bold"><i class="fa-solid fa-clock"></i></div>
                     <div>
-                        <div class="text-2xl font-bold text-slate-900">60 phút</div>
-                        <div class="text-xs text-slate-500 font-medium">Thời gian chuẩn phòng thi</div>
+                        <div class="text-2xl font-bold text-slate-900">2 Chế độ</div>
+                        <div class="text-xs text-slate-500 font-medium">Ôn từng câu & Luyện thi</div>
                     </div>
                 </div>
                 <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200 flex items-center space-x-4">
-                    <div class="bg-amber-100 text-amber-600 p-3 rounded-xl text-xl font-bold"><i class="fa-solid fa-check-to-slot"></i></div>
+                    <div class="bg-amber-100 text-amber-600 p-3 rounded-xl text-xl font-bold"><i class="fa-solid fa-lightbulb"></i></div>
                     <div>
                         <div class="text-2xl font-bold text-slate-900">100%</div>
-                        <div class="text-xs text-slate-500 font-medium">Đáp án chuẩn kèm giải thích</div>
+                        <div class="text-xs text-slate-500 font-medium">Chấm tức thì kèm mẹo nhớ</div>
                     </div>
                 </div>
             </div>
@@ -164,15 +164,22 @@
             </div>
         </section>
 
-        <!-- TAB 3: PRACTICE -->
+        <!-- TAB 3: PRACTICE (ÔN TẬP THEO TỪNG CÂU) -->
         <section id="tab-practice" class="tab-content hidden space-y-6">
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 pb-4 border-b border-slate-100 gap-4">
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-6 pb-4 border-b border-slate-100 gap-4">
                     <div>
-                        <h2 class="text-2xl font-bold text-slate-900">Ngân hàng Câu hỏi Trắc nghiệm</h2>
-                        <p class="text-sm text-slate-500">Luyện tập từng câu, hiển thị đáp án và giải thích chi tiết ngay lập tức.</p>
+                        <h2 class="text-2xl font-bold text-slate-900">Ngân hàng Câu hỏi — Ôn tập theo từng câu</h2>
+                        <p class="text-sm text-slate-500">Click chọn một đáp án để kiểm tra Đúng/Sai và mở khóa giải thích + mẹo nhớ.</p>
                     </div>
-                    <div class="flex flex-wrap gap-2 w-full md:w-auto">
+                    <div class="flex flex-wrap items-center gap-2 w-full lg:w-auto">
+                        <div class="bg-slate-100 px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 border border-slate-200">
+                            Đã làm: <span id="practice-done-count" class="text-brand-600 font-bold">0</span> | 
+                            Đúng: <span id="practice-correct-count" class="text-emerald-600 font-bold">0</span>
+                        </div>
+                        <button onclick="resetAllPractice()" class="px-3 py-2 rounded-xl text-xs font-semibold bg-rose-50 text-rose-600 border border-rose-200 hover:bg-rose-100 transition">
+                            <i class="fa-solid fa-rotate-left mr-1"></i> Đặt lại tất cả
+                        </button>
                         <select id="practice-exam-filter" onchange="filterPracticeQuestions()" class="border border-slate-300 rounded-xl px-3 py-2 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none bg-white">
                             <option value="all">-- Tất cả các đề --</option>
                             <option value="FA2024">Đề 1: FA 2024 - FE</option>
@@ -196,41 +203,64 @@
                     </div>
                 </div>
 
-                <div id="practice-questions-list" class="space-y-6">
+                <div id="practice-questions-list" class="space-y-5">
                     <!-- Rendered by JS -->
                 </div>
             </div>
         </section>
 
-        <!-- TAB 4: EXAM SIMULATION -->
+        <!-- TAB 4: EXAM SIMULATION & IN-EXAM PRACTICE -->
         <section id="tab-exam" class="tab-content hidden space-y-6">
             <!-- Màn hình cấu hình thi -->
-            <div id="exam-setup" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 max-w-2xl mx-auto text-center space-y-6">
-                <div class="bg-brand-50 text-brand-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto text-2xl font-bold shadow-inner">
-                    <i class="fa-solid fa-file-lines"></i>
-                </div>
-                <div>
-                    <h2 class="text-2xl font-bold text-slate-900">Thi Thử Trắc Nghiệm Trực Tuyến</h2>
-                    <p class="text-slate-500 text-sm mt-1">Mô phỏng chính xác kỳ thi chuẩn của học phần DTA301.</p>
+            <div id="exam-setup" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 max-w-2xl mx-auto space-y-6">
+                <div class="text-center space-y-2">
+                    <div class="bg-brand-50 text-brand-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto text-2xl font-bold shadow-inner">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900">Luyện tập trong thi & Thi thử</h2>
+                    <p class="text-slate-500 text-sm">Chọn đề thi và chế độ làm bài phù hợp với mục tiêu ôn luyện của bạn.</p>
                 </div>
 
-                <div class="bg-slate-50 p-4 rounded-xl text-left space-y-3 border border-slate-200">
-                    <label class="block text-sm font-semibold text-slate-700">Chọn đề thi muốn luyện tập:</label>
-                    <select id="exam-source-select" class="w-full border border-slate-300 rounded-xl px-3 py-2.5 text-sm bg-white focus:ring-2 focus:ring-brand-500 focus:outline-none">
-                        <option value="all">Toàn bộ ngân hàng (Kết hợp Đề FA 2024 & SU26)</option>
-                        <option value="FA2024">Đề thi: DTA301 - FA 2024 - FE (60 câu)</option>
-                        <option value="SU26">Đề thi: DTA301 - SU26 - FE (60 câu)</option>
-                    </select>
+                <div class="bg-slate-50 p-5 rounded-xl space-y-4 border border-slate-200">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-1.5">1. Chọn bộ đề thi:</label>
+                        <select id="exam-source-select" onchange="updateExamPreviewCount()" class="w-full border border-slate-300 rounded-xl px-3 py-2.5 text-sm bg-white focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                            <option value="all">Toàn bộ ngân hàng (Trộn ngẫu nhiên FA 2024 & SU26)</option>
+                            <option value="FA2024">Đề thi: DTA301 - FA 2024 - FE (60 câu)</option>
+                            <option value="SU26">Đề thi: DTA301 - SU26 - FE (60 câu)</option>
+                        </select>
+                    </div>
 
-                    <div class="grid grid-cols-2 gap-4 pt-2 text-sm text-slate-600">
-                        <div><i class="fa-regular fa-clock text-brand-600 mr-1"></i> Thời gian: <strong class="text-slate-900">60 phút</strong></div>
-                        <div><i class="fa-solid fa-circle-question text-brand-600 mr-1"></i> Số lượng: <strong class="text-slate-900" id="exam-count-preview">60 câu</strong></div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-1.5">2. Chọn chế độ làm bài:</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <label class="relative flex flex-col p-3.5 bg-white border-2 border-brand-500 rounded-xl cursor-pointer shadow-sm" id="mode-card-practice">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-bold text-sm text-brand-900"><i class="fa-solid fa-lightbulb text-amber-500 mr-1"></i> Luyện tập trong thi</span>
+                                    <input type="radio" name="exam-mode" value="instant" checked onchange="toggleExamModeUI()" class="text-brand-600 focus:ring-brand-500">
+                                </div>
+                                <span class="text-xs text-slate-500 mt-1">Chọn đáp án xong xem ngay Đúng/Sai và giải thích chi tiết từng câu, không áp lực thời gian.</span>
+                            </label>
+
+                            <label class="relative flex flex-col p-3.5 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-slate-300" id="mode-card-strict">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-bold text-sm text-slate-800"><i class="fa-solid fa-stopwatch text-rose-500 mr-1"></i> Thi thử tính giờ</span>
+                                    <input type="radio" name="exam-mode" value="strict" onchange="toggleExamModeUI()" class="text-brand-600 focus:ring-brand-500">
+                                </div>
+                                <span class="text-xs text-slate-500 mt-1">Đếm ngược 60 phút như thi thật. Nộp bài xong mới chấm điểm và mở khóa giải thích.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 pt-2 border-t border-slate-200 text-sm text-slate-600">
+                        <div><i class="fa-regular fa-clock text-brand-600 mr-1"></i> Thời gian: <strong class="text-slate-900" id="exam-time-preview">Tự do (Không giới hạn)</strong></div>
+                        <div><i class="fa-solid fa-circle-question text-brand-600 mr-1"></i> Số lượng: <strong class="text-slate-900" id="exam-count-preview">120 câu</strong></div>
                     </div>
                 </div>
 
                 <button onclick="startExam()" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg transition duration-200 flex items-center justify-center space-x-2">
                     <i class="fa-solid fa-play"></i>
-                    <span>Bắt đầu làm bài thi</span>
+                    <span>Bắt đầu ngay</span>
                 </button>
             </div>
 
@@ -238,10 +268,11 @@
             <div id="exam-room" class="hidden grid grid-cols-1 lg:grid-cols-4 gap-6">
                 <!-- Cột trái/chính: Nội dung câu hỏi -->
                 <div class="lg:col-span-3 bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-6">
-                    <div class="flex justify-between items-center pb-4 border-b border-slate-100">
-                        <div class="flex items-center space-x-3">
+                    <div class="flex flex-wrap justify-between items-center pb-4 border-b border-slate-100 gap-2">
+                        <div class="flex items-center space-x-2">
                             <span class="bg-brand-100 text-brand-800 text-xs font-bold px-3 py-1 rounded-full uppercase" id="exam-q-badge">Câu 1 / 60</span>
-                            <span class="text-xs text-slate-500 font-medium" id="exam-source-badge">Đề thi</span>
+                            <span class="text-xs text-slate-500 font-medium bg-slate-100 px-2.5 py-1 rounded-full" id="exam-source-badge">Đề thi</span>
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-100 text-amber-800" id="exam-mode-badge">Chế độ Luyện tập</span>
                         </div>
                         <button onclick="toggleFlagCurrent()" id="flag-btn" class="text-sm px-3 py-1.5 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-100 transition flex items-center space-x-1">
                             <i class="fa-regular fa-flag"></i> <span id="flag-text">Cắm cờ</span>
@@ -255,11 +286,13 @@
                         <div id="exam-options-container" class="space-y-3 pt-2">
                             <!-- Các lựa chọn A, B, C, D -->
                         </div>
+                        <!-- Khung giải thích ngay trong chế độ Luyện tập trong thi -->
+                        <div id="exam-instant-feedback" class="hidden mt-4"></div>
                     </div>
 
                     <div class="flex justify-between items-center pt-6 border-t border-slate-100">
                         <button onclick="prevExamQuestion()" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-700 text-sm font-medium hover:bg-slate-50 transition flex items-center space-x-1">
-                            <i class="fa-solid fa-arrow-left"></i> <span>Quay lại</span>
+                            <i class="fa-solid fa-arrow-left"></i> <span>Câu trước</span>
                         </button>
                         <button onclick="nextExamQuestion()" class="px-5 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium shadow transition flex items-center space-x-1">
                             <span>Câu tiếp theo</span> <i class="fa-solid fa-arrow-right"></i>
@@ -269,12 +302,12 @@
 
                 <!-- Cột phải: Đồng hồ & Bảng điều hướng câu hỏi -->
                 <div class="space-y-6">
-                    <!-- Đồng hồ -->
+                    <!-- Đồng hồ / Nộp bài -->
                     <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 text-center space-y-2">
-                        <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Thời gian còn lại</div>
+                        <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider" id="exam-timer-label">Thời gian</div>
                         <div class="text-3xl font-black text-brand-600 font-mono" id="exam-timer">60:00</div>
                         <button onclick="confirmSubmitExam()" class="w-full mt-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2.5 rounded-xl text-sm shadow transition">
-                            <i class="fa-solid fa-paper-plane mr-1"></i> Nộp bài sớm
+                            <i class="fa-solid fa-paper-plane mr-1"></i> Kết thúc & Chấm điểm
                         </button>
                     </div>
 
@@ -287,48 +320,52 @@
                         <div class="grid grid-cols-5 gap-2 max-h-72 overflow-y-auto p-1" id="exam-palette">
                             <!-- Rendered by JS -->
                         </div>
-                        <div class="pt-2 border-t border-slate-100 text-xs space-y-1.5 text-slate-600">
-                            <div class="flex items-center space-x-2"><span class="w-3 h-3 bg-brand-600 rounded-sm inline-block"></span><span>Đang chọn</span></div>
-                            <div class="flex items-center space-x-2"><span class="w-3 h-3 bg-emerald-100 border border-emerald-400 rounded-sm inline-block"></span><span>Đã làm</span></div>
-                            <div class="flex items-center space-x-2"><span class="w-3 h-3 bg-amber-100 border border-amber-400 rounded-sm inline-block"></span><span>Cắm cờ</span></div>
-                            <div class="flex items-center space-x-2"><span class="w-3 h-3 bg-slate-100 border border-slate-300 rounded-sm inline-block"></span><span>Chưa làm</span></div>
+                        <div class="pt-2 border-t border-slate-100 text-xs space-y-1.5 text-slate-600" id="palette-legend">
+                            <!-- Dynamic legend -->
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Màn hình kết quả thi -->
-            <div id="exam-result" class="hidden bg-white p-8 rounded-2xl shadow-sm border border-slate-200 max-w-3xl mx-auto space-y-6 text-center">
-                <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-3xl flex items-center justify-center mx-auto text-3xl font-bold shadow-inner">
-                    <i class="fa-solid fa-award"></i>
-                </div>
-                <div>
-                    <h2 class="text-3xl font-bold text-slate-900">Kết quả bài thi</h2>
-                    <p class="text-slate-500 text-sm mt-1">Chúc mừng bạn đã hoàn thành bài luyện tập DTA301!</p>
+            <div id="exam-result" class="hidden space-y-6">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 max-w-3xl mx-auto space-y-6 text-center">
+                    <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-3xl flex items-center justify-center mx-auto text-3xl font-bold shadow-inner">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-slate-900">Kết quả bài luyện tập</h2>
+                        <p class="text-slate-500 text-sm mt-1">Xem thống kê điểm số và rà soát giải thích chi tiết từng câu bên dưới.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <div class="text-xs text-slate-500 uppercase font-semibold">Điểm số (Thang 10)</div>
+                            <div class="text-3xl font-black text-brand-600 mt-1" id="res-score">8.5</div>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <div class="text-xs text-slate-500 uppercase font-semibold">Số câu đúng</div>
+                            <div class="text-3xl font-black text-emerald-600 mt-1" id="res-correct">51/60</div>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <div class="text-xs text-slate-500 uppercase font-semibold">Thời gian hoàn thành</div>
+                            <div class="text-3xl font-black text-slate-700 mt-1" id="res-time">45 phút</div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap justify-center gap-3 pt-2">
+                        <button onclick="resetExam()" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-2.5 rounded-xl text-sm shadow transition">
+                            <i class="fa-solid fa-rotate-right mr-1"></i> Chọn đề thi khác
+                        </button>
+                        <button onclick="toggleExamReviewSection()" class="bg-slate-800 hover:bg-slate-900 text-white font-semibold px-6 py-2.5 rounded-xl text-sm shadow transition">
+                            <i class="fa-solid fa-magnifying-glass mr-1"></i> Xem chi tiết bài làm & Mẹo
+                        </button>
+                    </div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4">
-                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                        <div class="text-xs text-slate-500 uppercase font-semibold">Điểm số (Thang 10)</div>
-                        <div class="text-3xl font-black text-brand-600 mt-1" id="res-score">8.5</div>
-                    </div>
-                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                        <div class="text-xs text-slate-500 uppercase font-semibold">Số câu đúng</div>
-                        <div class="text-3xl font-black text-emerald-600 mt-1" id="res-correct">51/60</div>
-                    </div>
-                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                        <div class="text-xs text-slate-500 uppercase font-semibold">Thời gian làm bài</div>
-                        <div class="text-3xl font-black text-slate-700 mt-1" id="res-time">45 phút</div>
-                    </div>
-                </div>
-
-                <div class="flex justify-center space-x-3 pt-2">
-                    <button onclick="resetExam()" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-2.5 rounded-xl text-sm shadow transition">
-                        <i class="fa-solid fa-rotate-right mr-1"></i> Thi lại đề mới
-                    </button>
-                    <button onclick="switchTab('practice')" class="bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold px-6 py-2.5 rounded-xl text-sm transition">
-                        <i class="fa-solid fa-magnifying-glass mr-1"></i> Xem lại đáp án chi tiết
-                    </button>
+                <!-- Danh sách xem lại bài thi sau khi nộp -->
+                <div id="exam-review-list" class="max-w-4xl mx-auto space-y-4">
+                    <!-- Rendered by JS after submit -->
                 </div>
             </div>
         </section>
@@ -338,7 +375,7 @@
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-6">
                 <div>
                     <h2 class="text-2xl font-bold text-slate-900">Quản lý & Cập nhật Dữ liệu Câu hỏi</h2>
-                    <p class="text-sm text-slate-500">Bạn có thể dán thêm nội dung tóm tắt lý thuyết hoặc câu hỏi trắc nghiệm mới vào bộ nhớ cục bộ (localStorage).</p>
+                    <p class="text-sm text-slate-500">Bạn có thể dán thêm nội dung câu hỏi trắc nghiệm mới vào bộ nhớ cục bộ (localStorage).</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -351,7 +388,7 @@
   "question": "Which of the following is correct?",
   "options": ["A. Option 1", "B. Option 2", "C. Option 3", "D. Option 4"],
   "answer": "A",
-  "explanation": "Giải thích chi tiết tại đây..."
+  "explanation": "Giải thích và mẹo ghi nhớ tại đây..."
 }'></textarea>
                         <button onclick="addNewQuestion()" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-semibold py-2.5 rounded-xl text-sm shadow transition">
                             Thêm vào cơ sở dữ liệu
@@ -404,17 +441,17 @@
             {
                 chapter: 4,
                 title: "Chương 4: Advanced Analytical Theory & Methods (Clustering)",
-                content: "Thuật toán gom cụm không giám sát (**Unsupervised Learning**): **K-means Clustering**. Các bước: Chọn $k$ và tâm cụm ban đầu, tính khoảng cách gán vào cụm gần nhất, cập nhật lại tâm cụm ($x_c, y_c = \sum x_i / m$), lặp lại đến hội tụ. Xác định $k$ tối ưu dựa trên biểu đồ *Within Sum of Squares (WSS)*."
+                content: "Thuật toán gom cụm không giám sát (**Unsupervised Learning**): **K-means Clustering**. Các bước: Chọn $k$ và tâm cụm ban đầu, tính khoảng cách gán vào cụm gần nhất, cập nhật lại tâm cụm ($x_c, y_c = \\sum x_i / m$), lặp lại đến hội tụ. Xác định $k$ tối ưu dựa trên biểu đồ *Within Sum of Squares (WSS)*."
             },
             {
                 chapter: 5,
                 title: "Chương 5: Association Rules & Apriori",
-                content: "Khai phá luật kết hợp (Association Rules) bằng thuật toán **Apriori**. Các chỉ số quan trọng: **Support** (tần suất xuất hiện đồng thời), **Confidence** (độ tin cậy của luật $X \rightarrow Y$), **Lift** và **Leverage** (đo lường mức độ tương quan so với độc lập thống kê)."
+                content: "Khai phá luật kết hợp (Association Rules) bằng thuật toán **Apriori**. Các chỉ số quan trọng: **Support** (tần suất xuất hiện đồng thời), **Confidence** (độ tin cậy của luật $X \\rightarrow Y$), **Lift** và **Leverage** (đo lường mức độ tương quan so với độc lập thống kê)."
             },
             {
                 chapter: 6,
                 title: "Chương 6: Regression (Linear & Logistic)",
-                content: "**Linear Regression** dùng ước lượng OLS (Ordinary Least Squares) cho biến đầu ra liên tục. **Logistic Regression** dùng dự đoán xác suất kết quả nhị phân, sử dụng hàm Likelihood và **Deviance** (định nghĩa bằng $-2 \log L$). *Null deviance* chỉ dựa vào hệ số chắn ($\beta_0$). Thống kê đánh giá thông qua Pseudo-R2, Residual deviance."
+                content: "**Linear Regression** dùng ước lượng OLS (Ordinary Least Squares) cho biến đầu ra liên tục. **Logistic Regression** dùng dự đoán xác suất kết quả nhị phân, sử dụng hàm Likelihood và **Deviance** (định nghĩa bằng $-2 \\log L$). *Null deviance* chỉ dựa vào hệ số chắn ($\\beta_0$). Thống kê đánh giá thông qua Pseudo-R2, Residual deviance."
             },
             {
                 chapter: 7,
@@ -444,145 +481,149 @@
             {
                 chapter: 12,
                 title: "Chương 12: The Endgame & Presentations",
-                content: "Giai đoạn kết thúc dự án phân tích: Báo cáo kết quả cho **Project Sponsors** (tập trung mục tiêu kinh doanh, điểm nhấn chính, slide 3-5 mục tiêu) và cho **Analysts / Technical Teams** (chi tiết phương pháp luận, mã nguồn, tài liệu kỹ thuật, tác động đến Dashboard của DBA)."
+                content: "Giai đoạn kết thúc dự án phân tích: Báo cáo kết quả cho **Project Sponsors** (tập trung mục tiêu kinh doanh, điểm nhấn chính, slide 2-3 mục tiêu) và cho **Analysts / Technical Teams** (chi tiết phương pháp luận, mã nguồn, tài liệu kỹ thuật, tác động đến Dashboard của BI Analyst)."
             }
         ];
 
         // Ngân hàng câu hỏi gốc đầy đủ (Đề FA 2024 và SU26)
         const defaultQuestions = [
             // --- ĐỀ FA 2024 ---
-            { id: "FA2024_01", exam: "FA2024", chapter: 1, question: "Which of the following is NOT a required skill and behavioral characteristics for Data scientists?", options: ["A. Quantitative skill", "B. Technical aptitude", "C. Communicative and collaborative", "D. Programming skill"], answer: "D", explanation: "Trong chuẩn giáo trình EMC/Dell Data Science, Data Scientist yêu cầu đầy đủ Quantitative skill, Technical aptitude, và Communicative & collaborative (hoặc tùy biến ngữ cảnh đề thi chuẩn). Ở đây đề chuẩn xác nhận đáp án." },
-            { id: "FA2024_02", exam: "FA2024", chapter: 1, question: "Which of the following are attributes stand out as defining Big Data characteristics?", options: ["A. Huge volume", "B. Complexity of type and structure", "C. Speed of new data creation and growth", "D. All of the others"], answer: "D", explanation: "Big Data đặc trưng bởi 3V: Volume, Velocity, Variety (All of the others)." },
-            { id: "FA2024_03", exam: "FA2024", chapter: 1, question: "Which of roles of the new Big Data ecosystem is technically savvy, with strong analytical skills?", options: ["A. Deep Analytical Talent", "B. Data Savvy Professionals", "C. Technology and Data Enablers", "D. Data Researchers"], answer: "A", explanation: "Deep Analytical Talent có chiều sâu kỹ thuật và kỹ năng phân tích mạnh." },
-            { id: "FA2024_04", exam: "FA2024", chapter: 1, question: "Which of the following represents people providing technical expertise to support analytical projects, such as provisioning and administrating analytical sandboxes, and managing large-scale data architectures?", options: ["A. Data Savvy Professionals", "B. Technology and Data Enablers", "C. Deep Analytical Talent", "D. Data Researchers"], answer: "B", explanation: "Technology and Data Enablers cung cấp hạ tầng, sandbox và quản trị kiến trúc dữ liệu." },
-            { id: "FA2024_05", exam: "FA2024", chapter: 1, question: "Who has less technical depth but has a basic knowledge of statistics or machine learning and can define key questions that can be answered using advanced analytics?", options: ["A. Data Savvy Professionals", "B. Technology and Data Enablers", "C. Deep Analytical Talent", "D. Database Administrators"], answer: "A", explanation: "Data Savvy Professionals có kiến thức cơ bản về thống kê và định hình câu hỏi kinh doanh." },
-            { id: "FA2024_06", exam: "FA2024", chapter: 2, question: "Data science teams would rather keep more data than too little data for the analysis. The questions for the data conditioning step that the team should answer include these, except:", options: ["A. What are the data sources? What are the target fields?", "B. How clean is the data?", "C. How consistent are the contents and files?", "D. What is the programming language used for data processing?"], answer: "D", explanation: "Ngôn ngữ lập trình không phải là câu hỏi trọng tâm của bước data conditioning (làm sạch dữ liệu)." },
-            { id: "FA2024_07", exam: "FA2024", chapter: 2, question: "Which of the following is NOT a task that analytics team should do?", options: ["A. Learning the Business Domain", "B. Identify available resources", "C. Framing the Problem", "D. Prepare the analytics sandbox"], answer: "D", explanation: "Chuẩn bị sandbox thường thuộc về IT/Data Enablers hoặc phối hợp kỹ thuật cụ thể." },
-            { id: "FA2024_08", exam: "FA2024", chapter: 2, question: "In which of the following phase, the team should identify key findings, quantify the business value, and develop a narrative to summarize and convey findings to stakeholders?", options: ["A. Data discovery", "B. Data preparation", "C. Model building", "D. Model planning", "E. Communicate result"], answer: "E", explanation: "Pha Communicate Results tập trung truyền tải kết quả và giá trị kinh doanh cho stakeholders." },
-            { id: "FA2024_09", exam: "FA2024", chapter: 2, question: "A part of _____ involves deciding which aspects of particular datasets will be useful to analyze in later steps", options: ["A. Data conditioning", "B. Performing ETLT", "C. Developing Initial Hypotheses", "D. Data analysis"], answer: "A", explanation: "Data conditioning bao gồm việc quyết định phần nào của dữ liệu hữu ích cho phân tích." },
-            { id: "FA2024_10", exam: "FA2024", chapter: 2, question: "The data-conditioning step is usually performed only by the following member, except:", options: ["A. The data owners", "B. A data engineer", "C. A database administrator", "D. A programmer"], answer: "D", explanation: "Programmer không phải là vai trò đặc thù duy nhất được liệt kê trong chuẩn quản lý dữ liệu." },
-            { id: "FA2024_11", exam: "FA2024", chapter: 3, question: "Which of the followings is correct statement used to add an additional column to dataset in R?", options: ["A. sales%per_order <- sales$sales_total/sales$num_of_orders", "B. sales+per_order <- sales$sales_total/sales$num_of_orders", "C. addcol(per_order) < sales$sales_total/sales$num_of_orders", "D. sales$per_order <- sales$sales_total/sales$num_of_orders"], answer: "D", explanation: "Dùng toán tử `$` để trỏ và gán cột mới trong R data frame: `sales$per_order <- ...`" },
-            { id: "FA2024_12", exam: "FA2024", chapter: 3, question: "The expected defaults for headers, column separators, and decimal point notations of read.table() function are", options: ["A. Headers is false, column separators = \"\", decimal point = '.'", "B. Headers is true, column separators = \",\", decimal point = \"\"", "C. Headers is true, column separators = \"\\n\", decimal point = \".\"", "D. Headers is true, column separators = \"\\t\", decimal point = \".\""], answer: "A", explanation: "read.table() mặc định header = FALSE, separator khoảng trắng / white space." },
-            { id: "FA2024_13", exam: "FA2024", chapter: 3, question: "The expected defaults for headers, column separators, and decimal point notations of read.delim() function are", options: ["A. Headers is false, column separators = \"\", decimal point = '.'", "B. Headers is true, column separators = \",\", decimal point = '.'", "C. Headers is true, column separators = \"\\t\", decimal point = \",\"", "D. Headers is true, column separators = \"\\t\", decimal point = \".\""], answer: "D", explanation: "read.delim() mặc định header = TRUE, separator là tab (\"\\t\"), decimal point là dấu chấm (\".\")." },
-            { id: "FA2024_14", exam: "FA2024", chapter: 3, question: "The expected defaults for headers, column separators, and decimal point notations of read.delim2() function are", options: ["A. Headers is false, column separators = \"\\t\", decimal point = \",\"", "B. Headers is true, column separators = \",\", decimal point = \".\"", "C. Headers is true, column separators = \"\\t\", decimal point = \",\""], answer: "C", explanation: "read.delim2() mặc định header = TRUE, separator = \"\\t\", decimal point = \",\" (dấu phẩy cho số thập phân châu Âu)." },
-            { id: "FA2024_15", exam: "FA2024", chapter: 4, question: "_____ assumes that distributions of the two populations have equal but unknown variances", options: ["A. Student's t-test", "B. Welch's t-test", "C. Wilcoxon rank-sum test", "D. ANOVA (Analysis of variance)"], answer: "A", explanation: "Student's t-test giả định hai tổng thể có phương sai bằng nhau nhưng chưa biết." },
-            { id: "FA2024_16", exam: "FA2024", chapter: 4, question: "In which step of the k-means algorithm do we choose the value of k and the k initial guesses for the centroids?", options: ["A. Step 1", "B. Step 2", "C. Step 3", "D. Step 4"], answer: "A", explanation: "Bước 1 của K-means là chọn k và khởi tạo các tâm cụm ban đầu." },
-            { id: "FA2024_17", exam: "FA2024", chapter: 4, question: "Which of the followings is NOT a method to verify the k cluster?", options: ["A. We should know how much better or worse having k clusters versus k-1 or k+1 clusters would be", "B. We use a heuristic using the Within Sum of Squares (WSS) metric", "C. The value of k can be chosen based on a reasonable guess or some predefined requirement", "D. We should base on the size of dataset and analysis requirements"], answer: "A", explanation: "Phương pháp kiểm chứng WSS và chọn k dựa trên kinh nghiệm / quy chuẩn." },
-            { id: "FA2024_18", exam: "FA2024", chapter: 4, question: "The following formula is used to calculate the centroid (xc, yc) of the m points in a k-means cluster in two dimensions: (xc, yc) = (sum(xi)/m, sum(yi)/m)", options: ["A. compute the distance from each data point", "B. calculate the centroid (xc, yc) of the m points in a k-means cluster in two dimensions"], answer: "B", explanation: "Công thức tính tâm cụm (trọng tâm tọa độ trung bình)." },
-            { id: "FA2024_19", exam: "FA2024", chapter: 4, question: "Which of the following is NOT a steps of the k-means algorithm to find k clusters?", options: ["A. 1. Choose the value of k...", "B. 2. Compute distance...", "C. 3. Compute the centroid...", "D. 4. Repeat Steps 2 and 3...", "E. 5. Repeat until the algorithm reaches the convergence"], answer: "E", explanation: "K-means chuẩn chỉ có 4 bước cơ bản, bước 5 lặp dư thừa." },
-            { id: "FA2024_20", exam: "FA2024", chapter: 4, question: "Is clustering the use of unsupervised techniques for grouping similar objects?", options: ["A. True", "B. False"], answer: "A", explanation: "Clustering là kỹ thuật học không giám sát (unsupervised)." },
-            { id: "FA2024_21", exam: "FA2024", chapter: 5, question: "What measures how many times more often X and Y occur together than expected if they are statistically independent of each other?", options: ["A. Lift", "B. Leverage", "C. Confidence", "D. Support"], answer: "A", explanation: "Lift đo lường số lần X và Y xuất hiện cùng nhau so với kỳ vọng độc lập." },
-            { id: "FA2024_22", exam: "FA2024", chapter: 5, question: "What measures the difference in the probability of X and Y appearing together in the dataset compared to expected if independent?", options: ["A. Lift", "B. Leverage", "C. Confidence", "D. Support"], answer: "B", explanation: "Leverage đo lường độ chênh lệch xác suất xuất hiện đồng thời." },
-            { id: "FA2024_23", exam: "FA2024", chapter: 5, question: "Given a large collection of transactions, what method can we use to see what items are frequently bought together and discover rules?", options: ["A. Association rules", "B. K-means", "C. Linear regression", "D. Decision trees"], answer: "A", explanation: "Association rules (Luật kết hợp) dùng cho giỏ hàng và giao dịch mua sắm." },
-            { id: "FA2024_24", exam: "FA2024", chapter: 5, question: "if 80% of all transactions contain itemset (bread), then the support of (bread) is", options: ["A. 0.8", "B. 0.2", "C. 80", "D. 20"], answer: "A", explanation: "Support biểu diễn dưới dạng xác suất thập phân (0.8)." },
-            { id: "FA2024_25", exam: "FA2024", chapter: 5, question: "A frequent itemset has items that appear together often enough. The term 'often enough' is formally defined with a _____ criterion", options: ["A. minimum support", "B. maximum support", "C. support enough", "D. threshold"], answer: "A", explanation: "Ngưỡng 'often enough' được định nghĩa bằng tiêu chuẩn minimum support." },
-            { id: "FA2024_26", exam: "FA2024", chapter: 6, question: "Which is the value where the likelihood function is based on the parameters in the specified logistic model?", options: ["A. The null deviance", "B. The residual deviance", "C. The pseudo-R2", "D. The different deviance"], answer: "B", explanation: "Residual deviance dựa trên các tham số trong mô hình logistic." },
-            { id: "FA2024_27", exam: "FA2024", chapter: 6, question: "In logistic regression, the _____ is the value where the likelihood function is based only on the intercept term (y=beta0)", options: ["A. null deviance", "B. residual deviance", "C. empty deviance", "D. different deviance"], answer: "A", explanation: "Null deviance chỉ dựa trên hệ số chắn (intercept)." },
-            { id: "FA2024_28", exam: "FA2024", chapter: 6, question: "What is a common technique to estimate the parameters in linear regression model?", options: ["A. Ordinary Least Squares (OLS)", "B. Minimum confidence", "C. Leverage", "D. Within Sum of Squares"], answer: "A", explanation: "OLS là phương pháp bình phương tối thiểu phổ biến trong hồi quy tuyến tính." },
-            { id: "FA2024_29", exam: "FA2024", chapter: 6, question: "Which of the following can be used to predict the likelihood of an outcome based on the input variables?", options: ["A. Logistic regression", "B. Linear regression", "C. Decision trees", "D. Association rules"], answer: "A", explanation: "Logistic regression dùng dự đoán xác suất kết quả phân loại nhị phân." },
-            { id: "FA2024_30", exam: "FA2024", chapter: 6, question: "In logistic regression, deviance is defined to be -2 * logL where L is maximized likelihood function.", options: ["A. +2*logL", "B. -2*logL", "C. -3*logL", "D. -4*logL"], answer: "B", explanation: "Deviance tính bằng -2 logL." },
-            { id: "FA2024_31", exam: "FA2024", chapter: 7, question: "In decision tree, _____ are the decision or test points", options: ["A. Internal nodes", "B. Splits", "C. Branches", "D. Leaf nodes"], answer: "A", explanation: "Internal nodes (nút trong) là các điểm kiểm tra quyết định." },
-            { id: "FA2024_32", exam: "FA2024", chapter: 7, question: "A naïve Bayes classifier assumes that the presence or absence of a particular feature is related to other features?", options: ["A. True", "B. False"], answer: "B", explanation: "Naive Bayes giả định tính độc lập có điều kiện giữa các đặc trưng (conditional independence)." },
-            { id: "FA2024_33", exam: "FA2024", chapter: 7, question: "In decision tree, the top internal node is called the", options: ["A. root", "B. leaf", "C. split", "D. node"], answer: "A", explanation: "Nút trên cùng là root (nút gốc)." },
-            { id: "FA2024_34", exam: "FA2024", chapter: 7, question: "Bayes theorem gives the relationship between the probabilities of two events and their", options: ["A. conditional probabilities", "B. conditional confidence", "C. conditional interval", "D. Interval confidence"], answer: "A", explanation: "Định lý Bayes liên hệ xác suất biên và xác suất có điều kiện." },
-            { id: "FA2024_35", exam: "FA2024", chapter: 7, question: "Which algorithm introduces a number of improvements over the original ID3 algorithm?", options: ["A. The C4.5", "B. CART", "C. Naive Bayes", "D. Decisions tree"], answer: "A", explanation: "C4.5 cải tiến từ ID3." },
-            { id: "FA2024_36", exam: "FA2024", chapter: 8, question: "Which of the following is expressed by Equation for MA(q) or AR(p)?", options: ["A. Moving average model MA(q)", "B. Autoregressive model AR(p)"], answer: "B", explanation: "Phương trình biểu diễn mô hình tự hồi quy AR(p)." },
-            { id: "FA2024_37", exam: "FA2024", chapter: 8, question: "Which of the following is NOT a steps in Box-Jenkins methodology for time series analysis?", options: ["A. 1. Condition data and select a model.", "B. 2. Estimate the model parameters.", "C. 3. Assess the model...", "D. 4. Gain the result from model and return to Step 1, if necessary."], answer: "D", explanation: "Quy chuẩn Box-Jenkins gồm Identification/Condition, Estimation, Diagnostic Checking." },
-            { id: "FA2024_38", exam: "FA2024", chapter: 8, question: "A time series is a stationary time series if three conditions are met, except:", options: ["A. Mean is constant", "B. Variance is finite", "C. Covariance depends only on h", "D. Covariance not depends only on h"], answer: "D", explanation: "Covariance phải phụ thuộc vào độ trễ h chứ không phụ thuộc thời gian tuyệt đối t." },
-            { id: "FA2024_39", exam: "FA2024", chapter: 8, question: "The covariance of yt and yt+h is a measure of how the two variables vary together is expressed in equation?", options: ["A. True", "B. False"], answer: "A", explanation: "Định nghĩa chính xác covariance chuỗi thời gian." },
-            { id: "FA2024_40", exam: "FA2024", chapter: 8, question: "_____ is a useful model for addressing time series with non-constant variance or volatility (stock market).", options: ["A. ARMAX", "B. Spectral analysis", "C. Generalized Autoregressive Conditionally Heteroscedastic (GARCH)", "D. Kalman filtering"], answer: "C", explanation: "GARCH mô hình hóa phương sai thay đổi (volatility) trong tài chính." },
-            { id: "FA2024_41", exam: "FA2024", chapter: 9, question: "Which of the followings is the identification of documents in a corpus that contain search items such as specific words, phrases, topics?", options: ["A. Parsing", "B. Search and retrieval", "C. Text mining", "D. Discover meaningful insights"], answer: "B", explanation: "Search and retrieval tìm kiếm tài liệu chứa từ khóa/chủ đề trong corpus." },
-            { id: "FA2024_42", exam: "FA2024", chapter: 9, question: "Which provides tools to automatically organize, search, understand, and summarize from vast amounts of information?", options: ["A. Topic modeling", "B. Case folding", "C. Parsing", "D. Search and retrieve", "E. Normalization"], answer: "A", explanation: "Topic modeling giúp tự động tổ chức và tóm tắt thông tin lớn." },
-            { id: "FA2024_43", exam: "FA2024", chapter: 9, question: "Which technique usually refers to a crude process of stripping affixes based on a set of heuristics?", options: ["A. Lemmatization", "B. Stemming methods", "C. Classification", "D. Clustering"], answer: "B", explanation: "Stemming là quá trình cắt gọt tiền/hậu tố thô sơ theo quy tắc heuristics." },
-            { id: "FA2024_44", exam: "FA2024", chapter: 9, question: "Which of the following represents the weight of each term in a document, proportional to its occurrences?", options: ["A. IC", "B. Term frequency (TF)", "C. IDF", "D. DF"], answer: "B", explanation: "Term Frequency (TF) đo tần suất xuất hiện từ trong văn bản." },
-            { id: "FA2024_45", exam: "FA2024", chapter: 9, question: "Which is a metric to denote the importance of a term in a corpus?", options: ["A. IC", "B. TF", "C. Inverse Document Frequency (IDF)", "D. DF"], answer: "C", explanation: "IDF đánh giá độ quan trọng của từ trong toàn bộ corpus." },
-            { id: "FA2024_46", exam: "FA2024", chapter: 10, question: "The figure illustrates MapReduce processing. Step 1 is map, step 2 is reduce...", options: ["A. Map/Reduce", "B. Reduce/Map", "C. MapReduce/Shuffle"], answer: "A", explanation: "Luồng xử lý cơ bản MapReduce." },
-            { id: "FA2024_47", exam: "FA2024", chapter: 10, question: "What step in MapReduce applies an operation to a piece of data?", options: ["A. Map", "B. Reduce", "C. Parsing"], answer: "A", explanation: "Map áp dụng phép toán lên từng phần dữ liệu." },
-            { id: "FA2024_48", exam: "FA2024", chapter: 10, question: "MapReduce paradigm provides means to break a large task into smaller tasks, run in sequence, and consolidate?", options: ["A. True", "B. False"], answer: "A", explanation: "Bản chất phân rã và tổng hợp của MapReduce." },
-            { id: "FA2024_49", exam: "FA2024", chapter: 10, question: "In Apache Hadoop, _____ provides the logic to be processed on each data block corresponding to input files in driver code", options: ["A. The driver", "B. The mapper", "C. The scheduler", "D. The combiner"], answer: "B", explanation: "Mapper chứa logic xử lý trên từng block dữ liệu." },
-            { id: "FA2024_50", exam: "FA2024", chapter: 10, question: "In Apache Hadoop, _____ provides details such as input file locations, names of mapper/reducer classes.", options: ["A. The driver", "B. The mapper", "C. The scheduler", "D. The broker"], answer: "A", explanation: "The driver cấu hình định vị tệp và lớp mapper/reducer." },
-            { id: "FA2024_51", exam: "FA2024", chapter: 11, question: "The following statement will return SELECT '123a567' ~ '-2.5'", options: ["A. True", "B. False", "C. Error", "D. Empty"], answer: "B", explanation: "Toán tử regex `~` không khớp trong biểu thức này." },
-            { id: "FA2024_52", exam: "FA2024", chapter: 11, question: "The following statement will return SELECT '123a567' ~ '23 b'", options: ["A. True", "B. False", "C. Error", "D. Nothing"], answer: "B", explanation: "Không thỏa mãn biểu thức chính quy." },
-            { id: "FA2024_53", exam: "FA2024", chapter: 11, question: "_____ function can be used to order a set of rows based on some attribute", options: ["A. RANK()", "B. Order()", "C. Sort()", "D. Having()"], answer: "A", explanation: "RANK() sắp xếp và xếp hạng các hàng trong SQL." },
-            { id: "FA2024_54", exam: "FA2024", chapter: 11, question: "Which of the following function in PostgreSQL rank of the current row without gaps? This function counts peer groups.", options: ["A. rank()", "B. dense_rank()", "C. percent_rank()", "D. row_number()"], answer: "B", explanation: "dense_rank() xếp hạng không bị đứt quãng (không có khoảng trống)." },
-            { id: "FA2024_55", exam: "FA2024", chapter: 11, question: "The following statement will return SELECT '123a567' ~ '2*'", options: ["A. True", "B. False", "C. Error", "D. Empty"], answer: "A", explanation: "Biểu thức regex khớp đúng cú pháp." },
-            { id: "FA2024_56", exam: "FA2024", chapter: 12, question: "In the Approach section of presentations for Analyst, we should discuss on", options: ["A. High-level methodology", "B. High-level methodology, Relevant details on modeling techniques and technology", "C. Emphasize key messages", "D. Overview of the modeling technique"], answer: "B", explanation: "Trình bày cho Analyst cần phương pháp luận cấp cao kèm chi tiết kỹ thuật/mô hình." },
-            { id: "FA2024_57", exam: "FA2024", chapter: 12, question: "Who needs to know if reports and dashboards he manages will be impacted and need to change at the conclusion?", options: ["A. Data Scientists", "B. Data Engineer & DBA", "C. Business Intelligence Analyst", "D. Project Manager"], answer: "C", explanation: "BI Analyst quản lý báo cáo và dashboard." },
-            { id: "FA2024_58", exam: "FA2024", chapter: 12, question: "Who typically tries to determine the benefits and implications of key project outputs of the findings to the Business?", options: ["A. Business users", "B. Project sponsor", "C. BI analyst", "D. Data Scientists"], answer: "B", explanation: "Project sponsor quan tâm đến lợi ích và hàm ý kinh doanh." },
-            { id: "FA2024_59", exam: "FA2024", chapter: 12, question: "Who typically need to share the code from analytical project and create technical documents describing implementation?", options: ["A. Data Engineer and Database Administrator (DBA)", "B. BI Analyst", "C. Project Manager", "D. Business User"], answer: "A", explanation: "Data Engineer và DBA nhận bàn giao mã nguồn và tài liệu kỹ thuật." },
-            { id: "FA2024_60", exam: "FA2024", chapter: 12, question: "Which of the following section in presentations for Project Sponsor we should discuss on overview of modeling technique?", options: ["A. Key Points", "B. Model Details", "C. Model Description", "D. Main Findings"], answer: "C", explanation: "Model Description trình bày tổng quan mô hình cho Sponsor." },
+            { id: "FA2024_01", exam: "FA2024", chapter: 1, question: "Which of the following is NOT a required skill and behavioral characteristics for Data scientists?", options: ["A. Quantitative skill", "B. Technical aptitude", "C. Communicative and collaborative", "D. Programming skill"], answer: "D", explanation: "Mẹo: Giáo trình gốc EMC/Dell liệt kê 5 đặc điểm cốt lõi của Data Scientist (Quantitative skill, Technical aptitude, Skeptical mind-set & critical thinking, Curious & creative, Communicative & collaborative) — không tách riêng 'Programming skill' thành mục độc lập." },
+            { id: "FA2024_02", exam: "FA2024", chapter: 1, question: "Which of the following are attributes stand out as defining Big Data characteristics?", options: ["A. Huge volume", "B. Complexity of type and structure", "C. Speed of new data creation and growth", "D. All of the others"], answer: "D", explanation: "Mẹo: Nhớ quy tắc 3V của Big Data: Volume (khối lượng lớn), Variety (đa dạng cấu trúc), Velocity (tốc độ tăng trưởng nhanh) -> chọn All of the others." },
+            { id: "FA2024_03", exam: "FA2024", chapter: 1, question: "Which of roles of the new Big Data ecosystem is technically savvy, with strong analytical skills?", options: ["A. Deep Analytical Talent", "B. Data Savvy Professionals", "C. Technology and Data Enablers", "D. Data Researchers"], answer: "A", explanation: "Mẹo: Thấy từ khóa 'strong analytical skills' (kỹ năng phân tích chuyên sâu) -> chọn ngay Deep Analytical Talent." },
+            { id: "FA2024_04", exam: "FA2024", chapter: 1, question: "Which of the following represents people providing technical expertise to support analytical projects, such as provisioning and administrating analytical sandboxes, and managing large-scale data architectures?", options: ["A. Data Savvy Professionals", "B. Technology and Data Enablers", "C. Deep Analytical Talent", "D. Data Researchers"], answer: "B", explanation: "Mẹo: Nhắc tới hạ tầng kỹ thuật, quản trị 'analytical sandboxes' và kiến trúc dữ liệu -> chọn Technology and Data Enablers." },
+            { id: "FA2024_05", exam: "FA2024", chapter: 1, question: "Who has less technical depth but has a basic knowledge of statistics or machine learning and can define key questions that can be answered using advanced analytics?", options: ["A. Data Savvy Professionals", "B. Technology and Data Enablers", "C. Deep Analytical Talent", "D. Database Administrators"], answer: "A", explanation: "Mẹo: 'Less technical depth' + 'define key questions' (đặt câu hỏi kinh doanh) -> Data Savvy Professionals." },
+            { id: "FA2024_06", exam: "FA2024", chapter: 2, question: "Data science teams would rather keep more data than too little data for the analysis. The questions for the data conditioning step that the team should answer include these, except:", options: ["A. What are the data sources? What are the target fields?", "B. How clean is the data?", "C. How consistent are the contents and files?", "D. What is the programming language used for data processing?"], answer: "D", explanation: "Mẹo: Bước Data Conditioning chỉ quan tâm đến chất lượng, nguồn và độ nhất quán của dữ liệu, không hỏi về ngôn ngữ lập trình." },
+            { id: "FA2024_07", exam: "FA2024", chapter: 2, question: "Which of the following is NOT a task that analytics team should do?", options: ["A. Learning the Business Domain", "B. Identify available resources", "C. Framing the Problem", "D. Prepare the analytics sandbox"], answer: "D", explanation: "Mẹo: Chuẩn bị analytics sandbox thuộc pha Data Preparation (hạ tầng kỹ thuật), không nằm trong nhóm tác vụ khởi đầu Discovery của nhóm phân tích." },
+            { id: "FA2024_08", exam: "FA2024", chapter: 2, question: "In which of the following phase, the team should identify key findings, quantify the business value, and develop a narrative to summarize and convey findings to stakeholders?", options: ["A. Data discovery", "B. Data preparation", "C. Model building", "D. Model planning", "E. Communicate result"], answer: "E", explanation: "Mẹo: Thấy 'convey findings to stakeholders' (truyền đạt kết quả cho các bên liên quan) -> chọn Communicate result." },
+            { id: "FA2024_09", exam: "FA2024", chapter: 2, question: "A part of _____ involves deciding which aspects of particular datasets will be useful to analyze in later steps", options: ["A. Data conditioning", "B. Performing ETLT", "C. Developing Initial Hypotheses", "D. Data analysis"], answer: "A", explanation: "Mẹo: Lọc và quyết định phần dữ liệu nào hữu ích cho các bước sau chính là Data conditioning." },
+            { id: "FA2024_10", exam: "FA2024", chapter: 2, question: "The data-conditioning step is usually performed only by the following member, except:", options: ["A. The data owners", "B. A data engineer", "C. A database administrator", "D. A programmer"], answer: "D", explanation: "Mẹo: Data conditioning cần người hiểu dữ liệu (Data owners, Data engineer, DBA) chứ không giao phó đơn thuần cho một Programmer." },
+            { id: "FA2024_11", exam: "FA2024", chapter: 3, question: "Which of the followings is correct statement used to add an additional column to dataset in R?", options: ["A. sales%per_order <- sales$sales_total/sales$num_of_orders", "B. sales+per_order <- sales$sales_total/sales$num_of_orders", "C. addcol(per_order) < sales$sales_total/sales$num_of_orders", "D. sales$per_order <- sales$sales_total/sales$num_of_orders"], answer: "D", explanation: "Mẹo: Trong R, truy xuất hoặc tạo cột mới cho data frame luôn dùng dấu đô la `$` (sales$per_order)." },
+            { id: "FA2024_12", exam: "FA2024", chapter: 3, question: "The expected defaults for headers, column separators, and decimal point notations of read.table() function are", options: ["A. Headers is false, column separators = \"\", decimal point = '.'", "B. Headers is true, column separators = \",\", decimal point = \"\"", "C. Headers is true, column separators = \"\\n\", decimal point = \".\"", "D. Headers is true, column separators = \"\\t\", decimal point = \".\""], answer: "A", explanation: "Mẹo: Hàm gốc read.table() mặc định KHÔNG có header (Headers = false) và dấu phân cách cột rỗng \"\" (khoảng trắng)." },
+            { id: "FA2024_13", exam: "FA2024", chapter: 3, question: "The expected defaults for headers, column separators, and decimal point notations of read.delim() function are", options: ["A. Headers is false, column separators = \"\", decimal point = '.'", "B. Headers is true, column separators = \",\", decimal point = '.'", "C. Headers is true, column separators = \"\\t\", decimal point = \",\"", "D. Headers is true, column separators = \"\\t\", decimal point = \".\""], answer: "D", explanation: "Mẹo: read.delim() mặc định Headers = true, tách cột bằng Tab (\"\\t\"), số thập phân dùng dấu chấm ('.')." },
+            { id: "FA2024_14", exam: "FA2024", chapter: 3, question: "The expected defaults for headers, column separators, and decimal point notations of read.delim2() function are", options: ["A. Headers is false, column separators = \"\\t\", decimal point = \",\"", "B. Headers is true, column separators = \",\", decimal point = \".\"", "C. Headers is true, column separators = \"\\t\", decimal point = \",\""], answer: "C", explanation: "Mẹo: Có số '2' (read.delim2) dành cho chuẩn châu Âu -> dấu thập phân đổi thành dấu phẩy (','), vẫn dùng Tab (\"\\t\") và Headers = true." },
+            { id: "FA2024_15", exam: "FA2024", chapter: 4, question: "_____ assumes that distributions of the two populations have equal but unknown variances", options: ["A. Student's t-test", "B. Welch's t-test", "C. Wilcoxon rank-sum test", "D. ANOVA (Analysis of variance)"], answer: "A", explanation: "Mẹo: Student's t-test giả định 2 tổng thể có phương sai bằng nhau (equal variances); Welch's t-test dùng khi phương sai khác nhau." },
+            { id: "FA2024_16", exam: "FA2024", chapter: 4, question: "In which step of the k-means algorithm do we choose the value of k and the k initial guesses for the centroids?", options: ["A. Step 1", "B. Step 2", "C. Step 3", "D. Step 4"], answer: "A", explanation: "Mẹo: Khởi tạo số cụm k và tâm cụm ban đầu luôn là Bước 1 (Step 1) của K-means." },
+            { id: "FA2024_17", exam: "FA2024", chapter: 4, question: "Which of the followings is NOT a method to verify the k cluster?", options: ["A. We should know how much better or worse having k clusters versus k-1 or k+1 clusters would be", "B. We use a heuristic using the Within Sum of Squares (WSS) metric", "C. The value of k can be chosen based on a reasonable guess or some predefined requirement", "D. We should base on the size of dataset and analysis requirements"], answer: "A", explanation: "Mẹo: Đáp án A là mục đích lý thuyết chứ không phải phương pháp cụ thể (giáo trình nêu 3 cách: đoán hợp lý/yêu cầu định trước, dùng đồ thị WSS, hoặc dựa vào kích thước dữ liệu)." },
+            { id: "FA2024_18", exam: "FA2024", chapter: 4, question: "The following formula is used to calculate the centroid (xc, yc) of the m points in a k-means cluster in two dimensions: (xc, yc) = (sum(xi)/m, sum(yi)/m)", options: ["A. compute the distance from each data point", "B. calculate the centroid (xc, yc) of the m points in a k-means cluster in two dimensions"], answer: "B", explanation: "Mẹo: Trung bình cộng tọa độ các điểm trong cụm chính là tọa độ tâm cụm (centroid)." },
+            { id: "FA2024_19", exam: "FA2024", chapter: 4, question: "Which of the following is NOT a steps of the k-means algorithm to find k clusters?", options: ["A. 1. Choose the value of k...", "B. 2. Compute distance...", "C. 3. Compute the centroid...", "D. 4. Repeat Steps 2 and 3...", "E. 5. Repeat until the algorithm reaches the convergence"], answer: "E", explanation: "Mẹo: Thuật toán K-means chuẩn chỉ gồm 4 bước; ý E lặp lại nội dung của Bước 4 nên bị thừa." },
+            { id: "FA2024_20", exam: "FA2024", chapter: 4, question: "Is clustering the use of unsupervised techniques for grouping similar objects?", options: ["A. True", "B. False"], answer: "A", explanation: "Mẹo: Gom cụm (Clustering) không có nhãn đầu ra nên là học không giám sát (Unsupervised) -> True." },
+            { id: "FA2024_21", exam: "FA2024", chapter: 5, question: "What measures how many times more often X and Y occur together than expected if they are statistically independent of each other?", options: ["A. Lift", "B. Leverage", "C. Confidence", "D. Support"], answer: "A", explanation: "Mẹo: Thấy cụm từ 'how many times more often' (gấp bao nhiêu lần - phép chia tỷ số) -> chọn Lift." },
+            { id: "FA2024_22", exam: "FA2024", chapter: 5, question: "What measures the difference in the probability of X and Y appearing together in the dataset compared to expected if independent?", options: ["A. Lift", "B. Leverage", "C. Confidence", "D. Support"], answer: "B", explanation: "Mẹo: Thấy cụm từ 'difference in the probability' (độ chênh lệch - phép trừ xác suất) -> chọn Leverage." },
+            { id: "FA2024_23", exam: "FA2024", chapter: 5, question: "Given a large collection of transactions, what method can we use to see what items are frequently bought together and discover rules?", options: ["A. Association rules", "B. K-means", "C. Linear regression", "D. Decision trees"], answer: "A", explanation: "Mẹo: Phân tích giỏ hàng / các món đồ hay mua cùng nhau ('frequently bought together') -> Association rules." },
+            { id: "FA2024_24", exam: "FA2024", chapter: 5, question: "if 80% of all transactions contain itemset (bread), then the support of (bread) is", options: ["A. 0.8", "B. 0.2", "C. 80", "D. 20"], answer: "A", explanation: "Mẹo: Chỉ số Support luôn biểu diễn dưới dạng số thập phân từ 0 đến 1 (80% = 0.8)." },
+            { id: "FA2024_25", exam: "FA2024", chapter: 5, question: "A frequent itemset has items that appear together often enough. The term 'often enough' is formally defined with a _____ criterion", options: ["A. minimum support", "B. maximum support", "C. support enough", "D. threshold"], answer: "A", explanation: "Mẹo: Ngưỡng để lọc tập phổ biến (frequent itemset) là minimum support." },
+            { id: "FA2024_26", exam: "FA2024", chapter: 6, question: "Which is the value where the likelihood function is based on the parameters in the specified logistic model?", options: ["A. The null deviance", "B. The residual deviance", "C. The pseudo-R2", "D. The different deviance"], answer: "B", explanation: "Mẹo: Có tham số đầy đủ của mô hình ('parameters in the specified logistic model') -> Residual deviance." },
+            { id: "FA2024_27", exam: "FA2024", chapter: 6, question: "In logistic regression, the _____ is the value where the likelihood function is based only on the intercept term (y=beta0)", options: ["A. null deviance", "B. residual deviance", "C. empty deviance", "D. different deviance"], answer: "A", explanation: "Mẹo: Chỉ dựa trên hệ số chặn intercept ('only on the intercept term') -> Null deviance." },
+            { id: "FA2024_28", exam: "FA2024", chapter: 6, question: "What is a common technique to estimate the parameters in linear regression model?", options: ["A. Ordinary Least Squares (OLS)", "B. Minimum confidence", "C. Leverage", "D. Within Sum of Squares"], answer: "A", explanation: "Mẹo: Hồi quy tuyến tính (Linear Regression) luôn gắn liền với phương pháp bình phương tối thiểu OLS." },
+            { id: "FA2024_29", exam: "FA2024", chapter: 6, question: "Which of the following can be used to predict the likelihood of an outcome based on the input variables?", options: ["A. Logistic regression", "B. Linear regression", "C. Decision trees", "D. Association rules"], answer: "A", explanation: "Mẹo: Dự đoán xác suất xảy ra kết quả ('predict the likelihood of an outcome') -> Logistic regression." },
+            { id: "FA2024_30", exam: "FA2024", chapter: 6, question: "In logistic regression, deviance is defined to be -2 * logL where L is maximized likelihood function.", options: ["A. +2*logL", "B. -2*logL", "C. -3*logL", "D. -4*logL"], answer: "B", explanation: "Mẹo: Công thức chuẩn của Deviance luôn có dấu trừ và số 2: -2 * logL." },
+            { id: "FA2024_31", exam: "FA2024", chapter: 7, question: "In decision tree, _____ are the decision or test points", options: ["A. Internal nodes", "B. Splits", "C. Branches", "D. Leaf nodes"], answer: "A", explanation: "Mẹo: Các điểm kiểm tra điều kiện rẽ nhánh trên cây quyết định gọi là Internal nodes (nút trong)." },
+            { id: "FA2024_32", exam: "FA2024", chapter: 7, question: "A naïve Bayes classifier assumes that the presence or absence of a particular feature is related to other features?", options: ["A. True", "B. False"], answer: "B", explanation: "Mẹo: Chữ 'Naïve' (ngây thơ) nghĩa là giả định các đặc trưng ĐỘC LẬP với nhau, câu hỏi nói 'related' (có liên quan) nên là False." },
+            { id: "FA2024_33", exam: "FA2024", chapter: 7, question: "In decision tree, the top internal node is called the", options: ["A. root", "B. leaf", "C. split", "D. node"], answer: "A", explanation: "Mẹo: Nút trên cùng (top internal node) của cây quyết định là nút gốc (root)." },
+            { id: "FA2024_34", exam: "FA2024", chapter: 7, question: "Bayes theorem gives the relationship between the probabilities of two events and their", options: ["A. conditional probabilities", "B. conditional confidence", "C. conditional interval", "D. Interval confidence"], answer: "A", explanation: "Mẹo: Định lý Bayes liên hệ xác suất của hai biến cố và xác suất có điều kiện (conditional probabilities) của chúng." },
+            { id: "FA2024_35", exam: "FA2024", chapter: 7, question: "Which algorithm introduces a number of improvements over the original ID3 algorithm?", options: ["A. The C4.5", "B. CART", "C. Naive Bayes", "D. Decisions tree"], answer: "A", explanation: "Mẹo: C4.5 là phiên bản nâng cấp trực tiếp của thuật toán ID3." },
+            { id: "FA2024_36", exam: "FA2024", chapter: 8, question: "Which of the following is expressed by Equation for MA(q) or AR(p)?", options: ["A. Moving average model MA(q)", "B. Autoregressive model AR(p)"], answer: "B", explanation: "Mẹo: Phương trình biểu diễn biến hiện tại theo giá trị trễ của chính nó là Autoregressive model AR(p)." },
+            { id: "FA2024_37", exam: "FA2024", chapter: 8, question: "Which of the following is NOT a steps in Box-Jenkins methodology for time series analysis?", options: ["A. 1. Condition data and select a model.", "B. 2. Estimate the model parameters.", "C. 3. Assess the model...", "D. 4. Gain the result from model and return to Step 1, if necessary."], answer: "D", explanation: "Mẹo: Quy trình Box-Jenkins chỉ có 3 bước chính (1. Condition/Select, 2. Estimate, 3. Assess), không có bước 4." },
+            { id: "FA2024_38", exam: "FA2024", chapter: 8, question: "A time series is a stationary time series if three conditions are met, except:", options: ["A. Mean is constant", "B. Variance is finite", "C. Covariance depends only on h", "D. Covariance not depends only on h"], answer: "D", explanation: "Mẹo: Chuỗi dừng (Stationary) yêu cầu hiệp phương sai CHỈ phụ thuộc vào độ trễ h, nên D ('not depends') là sai." },
+            { id: "FA2024_39", exam: "FA2024", chapter: 8, question: "The covariance of yt and yt+h is a measure of how the two variables vary together is expressed in equation?", options: ["A. True", "B. False"], answer: "A", explanation: "Mẹo: Phát biểu đúng định nghĩa hiệp phương sai giữa yt và yt+h -> True." },
+            { id: "FA2024_40", exam: "FA2024", chapter: 8, question: "_____ is a useful model for addressing time series with non-constant variance or volatility (stock market).", options: ["A. ARMAX", "B. Spectral analysis", "C. Generalized Autoregressive Conditionally Heteroscedastic (GARCH)", "D. Kalman filtering"], answer: "C", explanation: "Mẹo: Thấy từ khóa 'volatility' hoặc 'stock market' (biến động chứng khoán) -> chọn ngay GARCH." },
+            { id: "FA2024_41", exam: "FA2024", chapter: 9, question: "Which of the followings is the identification of documents in a corpus that contain search items such as specific words, phrases, topics?", options: ["A. Parsing", "B. Search and retrieval", "C. Text mining", "D. Discover meaningful insights"], answer: "B", explanation: "Mẹo: Tìm tài liệu chứa từ khóa tìm kiếm ('contain search items') -> Search and retrieval." },
+            { id: "FA2024_42", exam: "FA2024", chapter: 9, question: "Which provides tools to automatically organize, search, understand, and summarize from vast amounts of information?", options: ["A. Topic modeling", "B. Case folding", "C. Parsing", "D. Search and retrieve", "E. Normalization"], answer: "A", explanation: "Mẹo: Tự động tổ chức và tóm tắt chủ đề từ lượng văn bản khổng lồ -> Topic modeling." },
+            { id: "FA2024_43", exam: "FA2024", chapter: 9, question: "Which technique usually refers to a crude process of stripping affixes based on a set of heuristics?", options: ["A. Lemmatization", "B. Stemming methods", "C. Classification", "D. Clustering"], answer: "B", explanation: "Mẹo: Cắt gọt tiền/hậu tố thô sơ theo luật ('crude process of stripping affixes') -> Stemming methods." },
+            { id: "FA2024_44", exam: "FA2024", chapter: 9, question: "Which of the following represents the weight of each term in a document, proportional to its occurrences?", options: ["A. IC", "B. Term frequency (TF)", "C. IDF", "D. DF"], answer: "B", explanation: "Mẹo: Tỷ lệ thuận với số lần xuất hiện trong một tài liệu ('proportional to its occurrences') -> Term frequency (TF)." },
+            { id: "FA2024_45", exam: "FA2024", chapter: 9, question: "Which is a metric to denote the importance of a term in a corpus?", options: ["A. IC", "B. TF", "C. Inverse Document Frequency (IDF)", "D. DF"], answer: "C", explanation: "Mẹo: Đo độ quan trọng của từ trong toàn bộ kho văn bản ('importance of a term in a corpus') -> IDF." },
+            { id: "FA2024_46", exam: "FA2024", chapter: 10, question: "The figure illustrates MapReduce processing. Step 1 is map, step 2 is reduce...", options: ["A. Map/Reduce", "B. Reduce/Map", "C. MapReduce/Shuffle"], answer: "A", explanation: "Mẹo: Luồng xử lý chuẩn luôn là Map trước rồi mới đến Reduce (Map/Reduce)." },
+            { id: "FA2024_47", exam: "FA2024", chapter: 10, question: "What step in MapReduce applies an operation to a piece of data?", options: ["A. Map", "B. Reduce", "C. Parsing"], answer: "A", explanation: "Mẹo: Áp dụng phép toán xử lý lên từng mẩu dữ liệu đầu vào là bước Map." },
+            { id: "FA2024_48", exam: "FA2024", chapter: 10, question: "MapReduce paradigm provides means to break a large task into smaller tasks, run in sequence, and consolidate?", options: ["A. True", "B. False"], answer: "A", explanation: "Mẹo: Chia nhỏ tác vụ lớn, thực thi và tổng hợp kết quả là nguyên lý cốt lõi của MapReduce -> True." },
+            { id: "FA2024_49", exam: "FA2024", chapter: 10, question: "In Apache Hadoop, _____ provides the logic to be processed on each data block corresponding to input files in driver code", options: ["A. The driver", "B. The mapper", "C. The scheduler", "D. The combiner"], answer: "B", explanation: "Mẹo: Chứa logic xử lý trên từng block dữ liệu ('logic to be processed on each data block') -> The mapper." },
+            { id: "FA2024_50", exam: "FA2024", chapter: 10, question: "In Apache Hadoop, _____ provides details such as input file locations, names of mapper/reducer classes.", options: ["A. The driver", "B. The mapper", "C. The scheduler", "D. The broker"], answer: "A", explanation: "Mẹo: Khai báo đường dẫn file input và tên lớp mapper/reducer là nhiệm vụ của chương trình điều phối -> The driver." },
+            { id: "FA2024_51", exam: "FA2024", chapter: 11, question: "The following statement will return SELECT '123a567' ~ '-2.5'", options: ["A. True", "B. False", "C. Error", "D. Empty"], answer: "B", explanation: "Mẹo: Chuỗi '123a567' không hề chứa '-2.5' nên phép so khớp regex `~` trả về False." },
+            { id: "FA2024_52", exam: "FA2024", chapter: 11, question: "The following statement will return SELECT '123a567' ~ '23 b'", options: ["A. True", "B. False", "C. Error", "D. Nothing"], answer: "B", explanation: "Mẹo: Trong chuỗi '123a567' sau số 23 là chữ 'a' chứ không phải khoảng trắng và 'b' -> False." },
+            { id: "FA2024_53", exam: "FA2024", chapter: 11, question: "_____ function can be used to order a set of rows based on some attribute", options: ["A. RANK()", "B. Order()", "C. Sort()", "D. Having()"], answer: "A", explanation: "Mẹo: Hàm cửa sổ (Window function) dùng để xếp hạng/sắp thứ tự các dòng trong SQL là RANK()." },
+            { id: "FA2024_54", exam: "FA2024", chapter: 11, question: "Which of the following function in PostgreSQL rank of the current row without gaps? This function counts peer groups.", options: ["A. rank()", "B. dense_rank()", "C. percent_rank()", "D. row_number()"], answer: "B", explanation: "Mẹo: Xếp hạng không có khoảng trống ('without gaps') -> chọn dense_rank()." },
+            { id: "FA2024_55", exam: "FA2024", chapter: 11, question: "The following statement will return SELECT '123a567' ~ '2*'", options: ["A. True", "B. False", "C. Error", "D. Empty"], answer: "A", explanation: "Mẹo: Trong regex, ký tự `*` nghĩa là lặp 0 hoặc nhiều lần ký tự '2' đứng trước nó -> luôn khớp (True)." },
+            { id: "FA2024_56", exam: "FA2024", chapter: 12, question: "In the Approach section of presentations for Analyst, we should discuss on", options: ["A. High-level methodology", "B. High-level methodology, Relevant details on modeling techniques and technology", "C. Emphasize key messages", "D. Overview of the modeling technique"], answer: "B", explanation: "Mẹo: Báo cáo cho Analyst (dân kỹ thuật) cần cả phương pháp tổng quan LẪN chi tiết kỹ thuật & công nghệ mô hình." },
+            { id: "FA2024_57", exam: "FA2024", chapter: 12, question: "Who needs to know if reports and dashboards he manages will be impacted and need to change at the conclusion?", options: ["A. Data Scientists", "B. Data Engineer & DBA", "C. Business Intelligence Analyst", "D. Project Manager"], answer: "C", explanation: "Mẹo: Người quản lý báo cáo và dashboard ('reports and dashboards') là Business Intelligence Analyst." },
+            { id: "FA2024_58", exam: "FA2024", chapter: 12, question: "Who typically tries to determine the benefits and implications of key project outputs of the findings to the Business?", options: ["A. Business users", "B. Project sponsor", "C. BI analyst", "D. Data Scientists"], answer: "B", explanation: "Mẹo: Người đánh giá lợi ích kinh doanh tổng thể ('benefits and implications... to the Business') là Project sponsor." },
+            { id: "FA2024_59", exam: "FA2024", chapter: 12, question: "Who typically need to share the code from analytical project and create technical documents describing implementation?", options: ["A. Data Engineer and Database Administrator (DBA)", "B. BI Analyst", "C. Project Manager", "D. Business User"], answer: "A", explanation: "Mẹo: Bàn giao code và tài liệu triển khai kỹ thuật ('share the code... technical documents') cho Data Engineer & DBA." },
+            { id: "FA2024_60", exam: "FA2024", chapter: 12, question: "Which of the following section in presentations for Project Sponsor we should discuss on overview of modeling technique?", options: ["A. Key Points", "B. Model Details", "C. Model Description", "D. Main Findings"], answer: "C", explanation: "Mẹo: Với Project Sponsor chỉ trình bày tổng quan mô hình ở mục Model Description (không đi sâu Model Details)." },
 
             // --- ĐỀ SU26 ---
-            { id: "SU26_01", exam: "SU26", chapter: 11, question: "Which type of join statement will return all records from the table on the left-hand side (LHS) of the join are considered?", options: ["A. LEFT OUTER JOIN", "B. RIGHT OUTER JOIN", "C. FULL OUTER JOIN", "D. INNER JOIN"], answer: "A", explanation: "LEFT OUTER JOIN trả về toàn bộ bản ghi từ bảng bên trái." },
-            { id: "SU26_02", exam: "SU26", chapter: 1, question: "Which of the following represents people providing technical expertise to support analytical projects, such as provisioning and administrating analytical sandboxes?", options: ["A. Data Savvy Professionals", "B. Technology and Data Enablers", "C. Deep Analytical Talent", "D. Data Researchers"], answer: "B", explanation: "Technology and Data Enablers quản trị sandbox và hạ tầng." },
-            { id: "SU26_03", exam: "SU26", chapter: 7, question: "In decision tree, _____ are the decision or test points", options: ["A. Internal nodes", "B. Splits", "C. Branches", "D. Leaf nodes"], answer: "A", explanation: "Internal nodes là các điểm kiểm tra quyết định." },
-            { id: "SU26_04", exam: "SU26", chapter: 4, question: "What visual tool is suggested in the text to help choose the optimal number of clusters?", options: ["A. A plot illustrating the WSS for different values of k", "B. A histogram showing attribute distribution", "C. A scatter plot of raw attribute values", "D. A pie chart showing cluster proportions"], answer: "A", explanation: "Biểu đồ WSS (Within Sum of Squares) giúp chọn số cụm k tối ưu." },
-            { id: "SU26_05", exam: "SU26", chapter: 9, question: "Which of the following techniques usually refers to a crude process of stripping affixes based on a set of heuristics?", options: ["A. Lemmatization methods", "B. Stemming methods", "C. Classification methods", "D. Clustering methods"], answer: "B", explanation: "Stemming là phương pháp cắt gọt tiền/hậu tố thô sơ theo heuristics." },
-            { id: "SU26_06", exam: "SU26", chapter: 12, question: "In the Project Goals section of presentations for Sponsor and Analyst, we should list top agreed-upon goals. How many goals?", options: ["A. 3-5", "B. 5-7", "C. 2-3", "D. 7-9"], answer: "C", explanation: "Đề xuất liệt kê 2-3 mục tiêu chính thống nhất." },
-            { id: "SU26_07", exam: "SU26", chapter: 6, question: "Which of the following can be used to predict the likelihood of an outcome based on input variables?", options: ["A. Logistic regression", "B. Linear regression", "C. Decision trees", "D. Association rules"], answer: "A", explanation: "Logistic regression dự đoán xác suất kết quả." },
-            { id: "SU26_08", exam: "SU26", chapter: 5, question: "What characteristic is highlighted about the Apriori algorithm in the text?", options: ["A. It is one of the earliest and most fundamental algorithms for its purpose", "B. It is a recently developed, cutting-edge algorithm", "C. It is used for optimizing database structures", "D. It is designed for real-time data visualization"], answer: "A", explanation: "Apriori là một trong những thuật toán kinh điển và nền tảng nhất cho luật kết hợp." },
-            { id: "SU26_09", exam: "SU26", chapter: 7, question: "In Naive Bayes, the input variables are generally _____ variables, but variations can accept _____.", options: ["A. categorical / continuous", "B. continuous / categorical", "C. continuous / continuous", "D. categorical / categorical"], answer: "A", explanation: "Naive Bayes truyền thống nhận biến phân loại (categorical) hoặc liên tục tùy biến thể." },
-            { id: "SU26_10", exam: "SU26", chapter: 7, question: "Which classification methods were specifically mentioned in the text? ('Focused on two methods...')", options: ["A. Decision trees and naive Bayes", "B. Support vector machines and neural networks", "C. Linear and logistic regression", "D. K-means and hierarchical clustering"], answer: "A", explanation: "Giáo trình tập trung vào Decision Trees và Naive Bayes." },
-            { id: "SU26_11", exam: "SU26", chapter: 10, question: "What step in MapReduce applies an operation to a piece of data?", options: ["A. Map", "B. Reduce", "C. Parsing"], answer: "A", explanation: "Map áp dụng phép toán lên dữ liệu." },
-            { id: "SU26_12", exam: "SU26", chapter: 8, question: "What is a key difference between time series analysis and most other statistical analyses?", options: ["A. Time series analysis implicitly addresses the dependence of observations on prior observations", "B. Time series analysis assumes observations are completely independent", "C. Time series analysis only deals with categorical data", "D. Time series analysis ignores the order of data points"], answer: "A", explanation: "Chuỗi thời gian xử lý sự phụ thuộc của quan sát hiện tại vào quá khứ." },
-            { id: "SU26_13", exam: "SU26", chapter: 12, question: "In the Approach section of presentations for Analyst, we should discuss on", options: ["A. High-level methodology", "B. High-level methodology, Relevant details on modeling techniques and technology", "C. Emphasize key messages", "D. Overview of modeling technique"], answer: "B", explanation: "Trình bày phương pháp luận cấp cao kèm chi tiết kỹ thuật/mô hình cho Analyst." },
-            { id: "SU26_14", exam: "SU26", chapter: 3, question: "Which of the following is a correct statement to install RODBC package in R?", options: ["A. install.packages(\"RODBC\")", "B. install packages (RODBC)", "C. package install (\"RODBC\")", "D. package.install (RODBC)"], answer: "A", explanation: "Cú pháp chuẩn cài đặt gói trong R: `install.packages(\"RODBC\")`." },
-            { id: "SU26_15", exam: "SU26", chapter: 2, question: "A part of _____ involves deciding which aspects of particular datasets will be useful to analyze in later steps", options: ["A. Data conditioning", "B. Performing ETLT", "C. Developing Initial Hypotheses", "D. Data analysis"], answer: "A", explanation: "Data conditioning quyết định các khía cạnh hữu ích của dữ liệu." },
-            { id: "SU26_16", exam: "SU26", chapter: 4, question: "What is the primary goal of clustering analysis in economics?", options: ["A. To group similar economic indicators", "B. To predict weather patterns", "C. To design efficient transportation systems", "D. To engineer new materials"], answer: "A", explanation: "Gom cụm các chỉ số kinh tế tương đồng." },
-            { id: "SU26_17", exam: "SU26", chapter: 4, question: "Does Student's t-test assumes that distributions of the two populations have equal but unknown variances?", options: ["A. Yes", "B. No"], answer: "A", explanation: "Đúng, Student's t-test giả định phương sai bằng nhau nhưng chưa biết." },
-            { id: "SU26_18", exam: "SU26", chapter: 2, question: "According to the provided text, what is a primary capability gained by data science teams through the described steps?", options: ["A. Identifying problems and conducting thorough dataset investigations for in-depth analysis", "B. Ignoring data inconsistencies", "C. Focusing solely on superficial data", "D. Avoiding dataset analysis"], answer: "A", explanation: "Nhận diện vấn đề và điều tra kỹ lưỡng tập dữ liệu." },
-            { id: "SU26_19", exam: "SU26", chapter: 4, question: "What is the foundational concept behind clustering analysis?", options: ["A. Object similarity based on attributes", "B. Random object distribution", "C. Object differentiation", "D. Object manipulation"], answer: "A", explanation: "Sự tương đồng giữa các đối tượng dựa trên thuộc tính." },
-            { id: "SU26_20", exam: "SU26", chapter: 10, question: "If a client application wants to access a particular file stored in HDFS, the application contacts _____ and provides locations of various blocks.", options: ["A. The NameNode daemon", "B. The DataNode daemon", "C. The Secondary NameNode", "D. The Third NameNode"], answer: "A", explanation: "NameNode quản lý vị trí các block file trong HDFS." },
-            { id: "SU26_21", exam: "SU26", chapter: 7, question: "Bayes theorem gives the relationship between the probabilities of two events and their", options: ["A. conditional probabilities", "B. conditional confidence", "C. conditional interval", "D. Interval confidence"], answer: "A", explanation: "Quan hệ giữa xác suất và xác suất có điều kiện." },
-            { id: "SU26_22", exam: "SU26", chapter: 9, question: "Which is the task of separating words from the body of text?", options: ["A. Tokenization", "B. Parsing", "C. Search and retrieve", "D. Normalization"], answer: "A", explanation: "Tokenization là tách từ khỏi văn bản." },
-            { id: "SU26_23", exam: "SU26", chapter: 8, question: "Which of the following refers to a periodic fluctuation, but one that is not as fixed as seasonality?", options: ["A. The trend component", "B. The seasonality component", "C. A cyclic component", "D. The random component"], answer: "C", explanation: "Cyclic component (thành phần chu kỳ) dao động không cố định thời gian như seasonality." },
-            { id: "SU26_24", exam: "SU26", chapter: 2, question: "Is it NOT important to involve the data scientist in data conditioning step because decisions do not affect subsequent analysis?", options: ["A. True", "B. False"], answer: "B", explanation: "False, việc tham gia của data scientist là cực kỳ quan trọng." },
-            { id: "SU26_25", exam: "SU26", chapter: 9, question: "Which of the followings is the identification of documents in a corpus that contain search items such as specific words, phrases?", options: ["A. Parsing", "B. Search and retrieval", "C. Text mining", "D. Discover meaningful insights"], answer: "B", explanation: "Search and retrieval xác định tài liệu chứa từ khóa." },
-            { id: "SU26_26", exam: "SU26", chapter: 2, question: "_____ is textual data with erratic data formats that can be formatted with effort, tools, and time (e.g., web clickstream data)", options: ["A. Structured data", "B. Semi-structured data", "C. Quasi-structured data", "D. Unstructured data"], answer: "C", explanation: "Quasi-structured data (dữ liệu bán cấu trúc / gần cấu trúc như clickstream)." },
-            { id: "SU26_27", exam: "SU26", chapter: 4, question: "Is clustering the use of unsupervised techniques for grouping similar objects?", options: ["A. True", "B. False"], answer: "A", explanation: "Đúng, clustering là học không giám sát." },
-            { id: "SU26_28", exam: "SU26", chapter: 9, question: "Which of the following represents the weight of each term in a document, proportional to occurrences?", options: ["A. IC", "B. Term frequency (TF)", "C. IDF", "D. DF"], answer: "B", explanation: "Term frequency (TF)." },
-            { id: "SU26_29", exam: "SU26", chapter: 5, question: "What is a primary strength of association rules?", options: ["A. Identifying 'interesting' and potentially non-obvious relationships within large datasets", "B. Predicting future outcomes with high accuracy", "C. Directly controlling consumer behavior", "D. Automatically generating financial forecasts"], answer: "A", explanation: "Phát hiện các mối quan hệ thú vị và tiềm ẩn trong dữ liệu lớn." },
-            { id: "SU26_30", exam: "SU26", chapter: 1, question: "Which of the following is a significant source of Big Data?", options: ["A. Social media platforms", "B. Traditional paper archives", "C. Isolated calculators", "D. Hand-written historical documents"], answer: "A", explanation: "Mạng xã hội là nguồn dữ liệu lớn khổng lồ." },
-            { id: "SU26_31", exam: "SU26", chapter: 8, question: "_____ is used to analyze a time series that is dependent on another time series?", options: ["A. Autoregressive Moving Average with Exogenous inputs (ARMAX)", "B. Spectral analysis", "C. GARCH", "D. Kalman filtering"], answer: "A", explanation: "ARMAX xử lý chuỗi thời gian phụ thuộc vào biến ngoại sinh / chuỗi khác." },
-            { id: "SU26_32", exam: "SU26", chapter: 12, question: "Which section in presentations for Project Sponsor we should discuss on overview of modeling technique?", options: ["A. Key Points", "B. Model Details", "C. Model Description", "D. Main Findings"], answer: "C", explanation: "Model Description." },
-            { id: "SU26_33", exam: "SU26", chapter: 7, question: "The process convert continuous variables into categorical ones is called", options: ["A. discretization", "B. specialization", "C. separation", "D. realization"], answer: "A", explanation: "Discretization (rời rạc hóa biến liên tục thành dạng phân loại)." },
-            { id: "SU26_34", exam: "SU26", chapter: 11, question: "_____ function can be used to order a set of rows based on some attribute", options: ["A. RANK()", "B. Order()", "C. Sort()", "D. Having()"], answer: "A", explanation: "RANK()." },
-            { id: "SU26_35", exam: "SU26", chapter: 6, question: "In logistic regression, the _____ is the value where likelihood function is based only on intercept term.", options: ["A. null deviance", "B. residual deviance", "C. empty deviance", "D. different deviance"], answer: "A", explanation: "Null deviance." },
-            { id: "SU26_36", exam: "SU26", chapter: 10, question: "What step in MapReduce consolidates intermediate outputs and provides final output?", options: ["A. Map", "B. Reduce", "C. Gain insights", "D. Parsing"], answer: "B", explanation: "Reduce tổng hợp kết quả trung gian thành đầu ra cuối cùng." },
-            { id: "SU26_37", exam: "SU26", chapter: 5, question: "What type of analysis technique is described in the text for uncovering relationships among items?", options: ["A. Association rules", "B. Regression analysis", "C. Time series analysis", "D. Sentiment analysis"], answer: "A", explanation: "Association rules." },
-            { id: "SU26_38", exam: "SU26", chapter: 7, question: "Which of the following measures the purity of an attribute?", options: ["A. Entropy", "B. Information gain", "C. Impurity rate", "D. purity rate"], answer: "A", explanation: "Entropy đo lường độ hỗn loạn / độ tinh khiết." },
-            { id: "SU26_39", exam: "SU26", chapter: 5, question: "In association rules, when algorithm identifies relationships with confidence >= threshold, it is called", options: ["A. minimum confidence", "B. Interval confidence", "C. Confidence", "D. Lift"], answer: "A", explanation: "Minimum confidence." },
-            { id: "SU26_40", exam: "SU26", chapter: 2, question: "What is the result of following the steps mentioned in the provided text?", options: ["A. The ability to identify problems and deeply investigate datasets", "B. A decrease in the need for dataset analysis", "C. Shallow review", "D. Create data without investigation"], answer: "A", explanation: "Khả năng nhận diện vấn đề và điều tra sâu dữ liệu." },
-            { id: "SU26_41", exam: "SU26", chapter: 10, question: "Which of the following will determine and track where the various blocks of a data file are stored?", options: ["A. The NameNode daemon", "B. The DataNode daemon", "C. Secondary NameNode", "D. Third NameNode"], answer: "A", explanation: "NameNode theo dõi vị trí các block." },
-            { id: "SU26_42", exam: "SU26", chapter: 6, question: "Which of the following is an analytical technique used to model the relationship between several input variables and a continuous outcome variable?", options: ["A. Linear regression", "B. K-means", "C. Association rules", "D. Decision trees"], answer: "A", explanation: "Linear regression (Hồi quy tuyến tính cho biến đầu ra liên tục)." },
-            { id: "SU26_43", exam: "SU26", chapter: 2, question: "What action might a data scientist need to take with variables to improve model adherence?", options: ["A. Transforming the variables, as appropriate", "B. Deleting variables", "C. Duplicating variables", "D. Ignoring discrepancies"], answer: "A", explanation: "Biến đổi các biến (transforming variables) phù hợp để tăng độ chuẩn xác mô hình." },
-            { id: "SU26_44", exam: "SU26", chapter: 10, question: "MapReduce paradigm provides means to break a large task into smaller tasks, run in sequence, and consolidate?", options: ["A. True", "B. False"], answer: "A", explanation: "Đúng với nguyên lý MapReduce." },
-            { id: "SU26_45", exam: "SU26", chapter: 1, question: "Who has less technical depth but has basic knowledge of statistics and can define key questions?", options: ["A. Data Savvy Professionals", "B. Technology and Data Enablers", "C. Deep Analytical Talent", "D. Database Administrators"], answer: "A", explanation: "Data Savvy Professionals." },
-            { id: "SU26_46", exam: "SU26", chapter: 3, question: "The dataset has four columns. Exclude Student ID from k-means input matrix:", options: ["A. True", "B. False"], answer: "A", explanation: "Loại bỏ cột định danh ID trước khi đưa vào ma trận tính toán k-means." },
-            { id: "SU26_47", exam: "SU26", chapter: 11, question: "The following statement will return SELECT '123a567' ~ '87'", options: ["A. True", "B. False", "C. Error", "D. Empty"], answer: "B", explanation: "Không khớp chuỗi mẫu." },
-            { id: "SU26_48", exam: "SU26", chapter: 4, question: "The following formula is used to calculate the centroid (xc, yc) of m points in k-means...", options: ["A. calculate the centroid (xc, yc)", "B. compute the distance"], answer: "A", explanation: "Tính toán tâm cụm (centroid)." },
-            { id: "SU26_49", exam: "SU26", chapter: 2, question: "What decision does a data scientist need to make regarding model building?", options: ["A. Deciding whether building one comprehensive model or many models on partitions is best", "B. Always building the simplest possible model", "C. Building models only on randomly selected subsets", "D. Building a model that ignores all data partitions"], answer: "A", explanation: "Quyết định xây dựng một mô hình toàn diện hay nhiều mô hình trên các phân vùng dữ liệu." },
-            { id: "SU26_50", exam: "SU26", chapter: 3, question: "Correct statement used to add an additional column to dataset in R:", options: ["A. sales%per_order...", "B. sales+per_order...", "C. addcol...", "D. sales$per_order <- sales$sales_total/sales$num_of_orders"], answer: "D", explanation: "Cú pháp chuẩn gán cột mới trong R bằng `$`: `sales$per_order <- ...`" },
-            { id: "SU26_51", exam: "SU26", chapter: 4, question: "If the task is to identify the effect of drug A compared to drug B, the null hypothesis H0 would be:", options: ["A. H0: Drug A and drug B have the same effect on patients", "B. H0: Drug A has a greater effect than drug B", "C. HA: Drug A and drug B have the same effect"], answer: "A", explanation: "H0 (giả thuyết không) luôn phát biểu không có sự khác biệt / tác động như nhau." },
-            { id: "SU26_52", exam: "SU26", chapter: 3, question: "Expected defaults for headers, column separators, and decimal point notations of read.delim() function are", options: ["A. Headers is false...", "B. Headers is true...", "C. Headers is true, column separators = \"\\t\", decimal point = \".\""], answer: "C", explanation: "read.delim() mặc định header = TRUE, separator = \"\\t\", decimal point = \".\"." },
-            { id: "SU26_53", exam: "SU26", chapter: 9, question: "Which of the followings is NOT a step in a text analysis process?", options: ["A. Parsing", "B. Search and retrieval", "C. Text mining", "D. Discover meaningful insights"], answer: "C", explanation: "Text mining là tổng thể lĩnh vực lớn, không phải là một bước đơn lẻ trong chu trình phân tích văn bản chuẩn." },
-            { id: "SU26_54", exam: "SU26", chapter: 12, question: "Who are someone who understands the domain area and usually benefits from the results?", options: ["A. Business user", "B. Project sponsor", "C. Business intelligence analyst", "D. Project Manager"], answer: "A", explanation: "Business user hiểu rõ lĩnh vực nghiệp vụ và hưởng lợi trực tiếp từ kết quả." },
-            { id: "SU26_55", exam: "SU26", chapter: 12, question: "Who typically need to share the code from analytical project and create technical documents describing implementation?", options: ["A. Data Engineer and Database Administrator (DBA)", "B. BI Analyst", "C. Project Manager", "D. Business User"], answer: "A", explanation: "Data Engineer và DBA nhận bàn giao mã nguồn." },
-            { id: "SU26_56", exam: "SU26", chapter: 8, question: "What is the primary purpose of ARIMA models?", options: ["A. To perform time series analysis on dependent observations", "B. To analyze independent observations", "C. To categorize data into distinct clusters", "D. To generate random data"], answer: "A", explanation: "Phân tích chuỗi thời gian trên các quan sát có sự phụ thuộc." },
-            { id: "SU26_57", exam: "SU26", chapter: 1, question: "Organizations evolve their processes and see opportunities from Big Data. Move beyond traditional BI toward Data Science-driven projects...", options: ["A. Transitioning from traditional Business Intelligence to Data Science-driven projects for complex inquiries", "B. Returning to manual paper-based methods"], answer: "A", explanation: "Chuyển dịch từ BI truyền thống sang các dự án định hướng Data Science phức tạp hơn." },
-            { id: "SU26_58", exam: "SU26", chapter: 5, question: "What measures the difference in the probability of X and Y appearing together in dataset compared to independent?", options: ["A. Lift", "B. Leverage", "C. Confidence", "D. Support"], answer: "B", explanation: "Leverage." },
-            { id: "SU26_59", exam: "SU26", chapter: 12, question: "Presentation for _____ contains high-level takeaways for executive-level stakeholders, with a few key messages?", options: ["A. Project Sponsors", "B. Analysts", "C. Technical people", "D. Database administrators"], answer: "A", explanation: "Presentation cho Project Sponsors chứa thông tin tổng quan cấp cao cho nhà điều hành." },
-            { id: "SU26_60", exam: "SU26", chapter: 12, question: "Which of the followings uses terms and indexes produced by prior two steps to discover meaningful insights?", options: ["A. Parsing", "B. Search and retrieval", "C. Text mining", "D. Discover meaningful insights"], answer: "D", explanation: "Pha Discover meaningful insights khám phá ý nghĩa." }
+            { id: "SU26_01", exam: "SU26", chapter: 11, question: "Which type of join statement will return all records from the table on the left-hand side (LHS) of the join are considered?", options: ["A. LEFT OUTER JOIN", "B. RIGHT OUTER JOIN", "C. FULL OUTER JOIN", "D. INNER JOIN"], answer: "A", explanation: "Mẹo: Lấy toàn bộ bản ghi từ bảng bên trái ('left-hand side') -> LEFT OUTER JOIN." },
+            { id: "SU26_02", exam: "SU26", chapter: 1, question: "Which of the following represents people providing technical expertise to support analytical projects, such as provisioning and administrating analytical sandboxes?", options: ["A. Data Savvy Professionals", "B. Technology and Data Enablers", "C. Deep Analytical Talent", "D. Data Researchers"], answer: "B", explanation: "Mẹo: Quản trị 'analytical sandboxes' -> Technology and Data Enablers." },
+            { id: "SU26_03", exam: "SU26", chapter: 7, question: "In decision tree, _____ are the decision or test points", options: ["A. Internal nodes", "B. Splits", "C. Branches", "D. Leaf nodes"], answer: "A", explanation: "Mẹo: Các điểm kiểm tra quyết định trên cây -> Internal nodes." },
+            { id: "SU26_04", exam: "SU26", chapter: 4, question: "What visual tool is suggested in the text to help choose the optimal number of clusters?", options: ["A. A plot illustrating the WSS for different values of k", "B. A histogram showing attribute distribution", "C. A scatter plot of raw attribute values", "D. A pie chart showing cluster proportions"], answer: "A", explanation: "Mẹo: Chọn số cụm k tối ưu bằng phương pháp khuỷu tay trên đồ thị WSS ('plot illustrating the WSS')." },
+            { id: "SU26_05", exam: "SU26", chapter: 9, question: "Which of the following techniques usually refers to a crude process of stripping affixes based on a set of heuristics?", options: ["A. Lemmatization methods", "B. Stemming methods", "C. Classification methods", "D. Clustering methods"], answer: "B", explanation: "Mẹo: Cắt gọt tiền/hậu tố thô sơ theo luật -> Stemming methods." },
+            { id: "SU26_06", exam: "SU26", chapter: 12, question: "In the Project Goals section of presentations for Sponsor and Analyst, we should list top agreed-upon goals. How many goals?", options: ["A. 3-5", "B. 5-7", "C. 2-3", "D. 7-9"], answer: "C", explanation: "Mẹo: Giáo trình khuyến nghị liệt kê ngắn gọn 2-3 mục tiêu chính đã thống nhất." },
+            { id: "SU26_07", exam: "SU26", chapter: 6, question: "Which of the following can be used to predict the likelihood of an outcome based on input variables?", options: ["A. Logistic regression", "B. Linear regression", "C. Decision trees", "D. Association rules"], answer: "A", explanation: "Mẹo: Dự đoán xác suất ('likelihood of an outcome') -> Logistic regression." },
+            { id: "SU26_08", exam: "SU26", chapter: 5, question: "What characteristic is highlighted about the Apriori algorithm in the text?", options: ["A. It is one of the earliest and most fundamental algorithms for its purpose", "B. It is a recently developed, cutting-edge algorithm", "C. It is used for optimizing database structures", "D. It is designed for real-time data visualization"], answer: "A", explanation: "Mẹo: Apriori là thuật toán kinh điển ra đời sớm và nền tảng nhất ('earliest and most fundamental') cho luật kết hợp." },
+            { id: "SU26_09", exam: "SU26", chapter: 7, question: "In Naive Bayes, the input variables are generally _____ variables, but variations can accept _____.", options: ["A. categorical / continuous", "B. continuous / categorical", "C. continuous / continuous", "D. categorical / categorical"], answer: "A", explanation: "Mẹo: Naive Bayes mặc định nhận biến phân loại (categorical), các biến thể mở rộng nhận thêm biến liên tục (continuous)." },
+            { id: "SU26_10", exam: "SU26", chapter: 7, question: "Which classification methods were specifically mentioned in the text? ('Focused on two methods...')", options: ["A. Decision trees and naive Bayes", "B. Support vector machines and neural networks", "C. Linear and logistic regression", "D. K-means and hierarchical clustering"], answer: "A", explanation: "Mẹo: Chương Classification trong giáo trình tập trung vào đúng 2 thuật toán: Decision trees và Naive Bayes." },
+            { id: "SU26_11", exam: "SU26", chapter: 10, question: "What step in MapReduce applies an operation to a piece of data?", options: ["A. Map", "B. Reduce", "C. Parsing"], answer: "A", explanation: "Mẹo: Map áp dụng phép xử lý lên từng phần dữ liệu." },
+            { id: "SU26_12", exam: "SU26", chapter: 8, question: "What is a key difference between time series analysis and most other statistical analyses?", options: ["A. Time series analysis implicitly addresses the dependence of observations on prior observations", "B. Time series analysis assumes observations are completely independent", "C. Time series analysis only deals with categorical data", "D. Time series analysis ignores the order of data points"], answer: "A", explanation: "Mẹo: Chuỗi thời gian xét đến sự phụ thuộc của quan sát hiện tại vào các quan sát trong quá khứ ('dependence... on prior observations')." },
+            { id: "SU26_13", exam: "SU26", chapter: 12, question: "In the Approach section of presentations for Analyst, we should discuss on", options: ["A. High-level methodology", "B. High-level methodology, Relevant details on modeling techniques and technology", "C. Emphasize key messages", "D. Overview of modeling technique"], answer: "B", explanation: "Mẹo: Trình bày cho Analyst cần đầy đủ phương pháp tổng quan + chi tiết kỹ thuật mô hình." },
+            { id: "SU26_14", exam: "SU26", chapter: 3, question: "Which of the following is a correct statement to install RODBC package in R?", options: ["A. install.packages(\"RODBC\")", "B. install packages (RODBC)", "C. package install (\"RODBC\")", "D. package.install (RODBC)"], answer: "A", explanation: "Mẹo: Cú pháp cài thư viện trong R luôn có dấu chấm và dấu ngoặc kép: install.packages(\"RODBC\")." },
+            { id: "SU26_15", exam: "SU26", chapter: 2, question: "A part of _____ involves deciding which aspects of particular datasets will be useful to analyze in later steps", options: ["A. Data conditioning", "B. Performing ETLT", "C. Developing Initial Hypotheses", "D. Data analysis"], answer: "A", explanation: "Mẹo: Lọc và chọn khía cạnh dữ liệu hữu ích -> Data conditioning." },
+            { id: "SU26_16", exam: "SU26", chapter: 4, question: "What is the primary goal of clustering analysis in economics?", options: ["A. To group similar economic indicators", "B. To predict weather patterns", "C. To design efficient transportation systems", "D. To engineer new materials"], answer: "A", explanation: "Mẹo: Trong kinh tế học ('in economics'), clustering dùng để gom nhóm các chỉ số kinh tế tương đồng." },
+            { id: "SU26_17", exam: "SU26", chapter: 4, question: "Does Student's t-test assumes that distributions of the two populations have equal but unknown variances?", options: ["A. Yes", "B. No"], answer: "A", explanation: "Mẹo: Student's t-test giả định hai tổng thể có phương sai bằng nhau nhưng chưa biết -> Yes." },
+            { id: "SU26_18", exam: "SU26", chapter: 2, question: "According to the provided text, what is a primary capability gained by data science teams through the described steps?", options: ["A. Identifying problems and conducting thorough dataset investigations for in-depth analysis", "B. Ignoring data inconsistencies", "C. Focusing solely on superficial data", "D. Avoiding dataset analysis"], answer: "A", explanation: "Mẹo: Loại trừ các đáp án tiêu cực (Ignoring, superficial, Avoiding) -> chọn ngay A." },
+            { id: "SU26_19", exam: "SU26", chapter: 4, question: "What is the foundational concept behind clustering analysis?", options: ["A. Object similarity based on attributes", "B. Random object distribution", "C. Object differentiation", "D. Object manipulation"], answer: "A", explanation: "Mẹo: Nền tảng của gom cụm là sự tương đồng giữa các đối tượng dựa trên thuộc tính ('Object similarity based on attributes')." },
+            { id: "SU26_20", exam: "SU26", chapter: 10, question: "If a client application wants to access a particular file stored in HDFS, the application contacts _____ and provides locations of various blocks.", options: ["A. The NameNode daemon", "B. The DataNode daemon", "C. The Secondary NameNode", "D. The Third NameNode"], answer: "A", explanation: "Mẹo: NameNode giữ bản đồ vị trí các block dữ liệu; DataNode chỉ lưu trữ block thực tế." },
+            { id: "SU26_21", exam: "SU26", chapter: 7, question: "Bayes theorem gives the relationship between the probabilities of two events and their", options: ["A. conditional probabilities", "B. conditional confidence", "C. conditional interval", "D. Interval confidence"], answer: "A", explanation: "Mẹo: Định lý Bayes gắn liền với xác suất có điều kiện (conditional probabilities)." },
+            { id: "SU26_22", exam: "SU26", chapter: 9, question: "Which is the task of separating words from the body of text?", options: ["A. Tokenization", "B. Parsing", "C. Search and retrieve", "D. Normalization"], answer: "A", explanation: "Mẹo: Tách văn bản thành từng từ/token ('separating words') -> Tokenization." },
+            { id: "SU26_23", exam: "SU26", chapter: 8, question: "Which of the following refers to a periodic fluctuation, but one that is not as fixed as seasonality?", options: ["A. The trend component", "B. The seasonality component", "C. A cyclic component", "D. The random component"], answer: "C", explanation: "Mẹo: Dao động lặp lại nhưng chu kỳ không cố định ('not as fixed as seasonality') -> Cyclic component." },
+            { id: "SU26_24", exam: "SU26", chapter: 2, question: "Is it NOT important to involve the data scientist in data conditioning step because decisions do not affect subsequent analysis?", options: ["A. True", "B. False"], answer: "B", explanation: "Mẹo: Data scientist bắt buộc phải tham gia bước Data conditioning vì nó ảnh hưởng trực tiếp tới mô hình sau này -> False." },
+            { id: "SU26_25", exam: "SU26", chapter: 9, question: "Which of the followings is the identification of documents in a corpus that contain search items such as specific words, phrases?", options: ["A. Parsing", "B. Search and retrieval", "C. Text mining", "D. Discover meaningful insights"], answer: "B", explanation: "Mẹo: Tìm tài liệu chứa từ khóa tìm kiếm -> Search and retrieval." },
+            { id: "SU26_26", exam: "SU26", chapter: 2, question: "_____ is textual data with erratic data formats that can be formatted with effort, tools, and time (e.g., web clickstream data)", options: ["A. Structured data", "B. Semi-structured data", "C. Quasi-structured data", "D. Unstructured data"], answer: "C", explanation: "Mẹo: Thấy ví dụ kinh điển 'web clickstream data' -> chọn ngay Quasi-structured data." },
+            { id: "SU26_27", exam: "SU26", chapter: 4, question: "Is clustering the use of unsupervised techniques for grouping similar objects?", options: ["A. True", "B. False"], answer: "A", explanation: "Mẹo: Clustering là học không giám sát -> True." },
+            { id: "SU26_28", exam: "SU26", chapter: 9, question: "Which of the following represents the weight of each term in a document, proportional to occurrences?", options: ["A. IC", "B. Term frequency (TF)", "C. IDF", "D. DF"], answer: "B", explanation: "Mẹo: Trọng số tỷ lệ theo số lần xuất hiện trong tài liệu -> Term frequency (TF)." },
+            { id: "SU26_29", exam: "SU26", chapter: 5, question: "What is a primary strength of association rules?", options: ["A. Identifying 'interesting' and potentially non-obvious relationships within large datasets", "B. Predicting future outcomes with high accuracy", "C. Directly controlling consumer behavior", "D. Automatically generating financial forecasts"], answer: "A", explanation: "Mẹo: Điểm mạnh của luật kết hợp là tìm ra các mối liên hệ thú vị và ẩn giấu ('interesting and potentially non-obvious relationships')." },
+            { id: "SU26_30", exam: "SU26", chapter: 1, question: "Which of the following is a significant source of Big Data?", options: ["A. Social media platforms", "B. Traditional paper archives", "C. Isolated calculators", "D. Hand-written historical documents"], answer: "A", explanation: "Mẹo: Nguồn dữ liệu lớn tiêu biểu hiện nay là mạng xã hội (Social media platforms)." },
+            { id: "SU26_31", exam: "SU26", chapter: 8, question: "_____ is used to analyze a time series that is dependent on another time series?", options: ["A. Autoregressive Moving Average with Exogenous inputs (ARMAX)", "B. Spectral analysis", "C. GARCH", "D. Kalman filtering"], answer: "A", explanation: "Mẹo: Chuỗi thời gian phụ thuộc vào chuỗi ngoại sinh khác ('dependent on another time series') -> ARMAX (chữ X = Exogenous)." },
+            { id: "SU26_32", exam: "SU26", chapter: 12, question: "Which section in presentations for Project Sponsor we should discuss on overview of modeling technique?", options: ["A. Key Points", "B. Model Details", "C. Model Description", "D. Main Findings"], answer: "C", explanation: "Mẹo: Tổng quan mô hình cho Sponsor nằm ở mục Model Description." },
+            { id: "SU26_33", exam: "SU26", chapter: 7, question: "The process convert continuous variables into categorical ones is called", options: ["A. discretization", "B. specialization", "C. separation", "D. realization"], answer: "A", explanation: "Mẹo: Chuyển biến liên tục thành rời rạc/phân loại -> discretization (rời rạc hóa)." },
+            { id: "SU26_34", exam: "SU26", chapter: 11, question: "_____ function can be used to order a set of rows based on some attribute", options: ["A. RANK()", "B. Order()", "C. Sort()", "D. Having()"], answer: "A", explanation: "Mẹo: Hàm xếp hạng các dòng trong SQL -> RANK()." },
+            { id: "SU26_35", exam: "SU26", chapter: 6, question: "In logistic regression, the _____ is the value where likelihood function is based only on intercept term.", options: ["A. null deviance", "B. residual deviance", "C. empty deviance", "D. different deviance"], answer: "A", explanation: "Mẹo: Chỉ dựa trên hệ số chặn intercept -> null deviance." },
+            { id: "SU26_36", exam: "SU26", chapter: 10, question: "What step in MapReduce consolidates intermediate outputs and provides final output?", options: ["A. Map", "B. Reduce", "C. Gain insights", "D. Parsing"], answer: "B", explanation: "Mẹo: Tổng hợp kết quả trung gian ('consolidates intermediate outputs') -> Reduce." },
+            { id: "SU26_37", exam: "SU26", chapter: 5, question: "What type of analysis technique is described in the text for uncovering relationships among items?", options: ["A. Association rules", "B. Regression analysis", "C. Time series analysis", "D. Sentiment analysis"], answer: "A", explanation: "Mẹo: Khám phá mối quan hệ giữa các mặt hàng ('relationships among items') -> Association rules." },
+            { id: "SU26_38", exam: "SU26", chapter: 7, question: "Which of the following measures the purity of an attribute?", options: ["A. Entropy", "B. Information gain", "C. Impurity rate", "D. purity rate"], answer: "A", explanation: "Mẹo: Đo lường độ thuần khiết/hỗn loạn của thuộc tính trong cây quyết định -> Entropy." },
+            { id: "SU26_39", exam: "SU26", chapter: 5, question: "In association rules, when algorithm identifies relationships with confidence >= threshold, it is called", options: ["A. minimum confidence", "B. Interval confidence", "C. Confidence", "D. Lift"], answer: "A", explanation: "Mẹo: Ngưỡng độ tin cậy tối thiểu -> minimum confidence." },
+            { id: "SU26_40", exam: "SU26", chapter: 2, question: "What is the result of following the steps mentioned in the provided text?", options: ["A. The ability to identify problems and deeply investigate datasets", "B. A decrease in the need for dataset analysis", "C. Shallow review", "D. Create data without investigation"], answer: "A", explanation: "Mẹo: Chọn đáp án tích cực nhất nói về khả năng nhận diện vấn đề và phân tích sâu dữ liệu." },
+            { id: "SU26_41", exam: "SU26", chapter: 10, question: "Which of the following will determine and track where the various blocks of a data file are stored?", options: ["A. The NameNode daemon", "B. The DataNode daemon", "C. Secondary NameNode", "D. Third NameNode"], answer: "A", explanation: "Mẹo: Theo dõi vị trí lưu trữ các block ('track where the various blocks... are stored') -> NameNode daemon." },
+            { id: "SU26_42", exam: "SU26", chapter: 6, question: "Which of the following is an analytical technique used to model the relationship between several input variables and a continuous outcome variable?", options: ["A. Linear regression", "B. K-means", "C. Association rules", "D. Decision trees"], answer: "A", explanation: "Mẹo: Biến đầu ra liên tục ('continuous outcome variable') -> Linear regression." },
+            { id: "SU26_43", exam: "SU26", chapter: 2, question: "What action might a data scientist need to take with variables to improve model adherence?", options: ["A. Transforming the variables, as appropriate", "B. Deleting variables", "C. Duplicating variables", "D. Ignoring discrepancies"], answer: "A", explanation: "Mẹo: Biến đổi biến số (log, chuẩn hóa...) để mô hình khớp tốt hơn -> Transforming the variables." },
+            { id: "SU26_44", exam: "SU26", chapter: 10, question: "MapReduce paradigm provides means to break a large task into smaller tasks, run in sequence, and consolidate?", options: ["A. True", "B. False"], answer: "A", explanation: "Mẹo: Đúng với nguyên lý chia để trị của MapReduce -> True." },
+            { id: "SU26_45", exam: "SU26", chapter: 1, question: "Who has less technical depth but has basic knowledge of statistics and can define key questions?", options: ["A. Data Savvy Professionals", "B. Technology and Data Enablers", "C. Deep Analytical Talent", "D. Database Administrators"], answer: "A", explanation: "Mẹo: Ít chiều sâu kỹ thuật nhưng biết đặt câu hỏi kinh doanh -> Data Savvy Professionals." },
+            { id: "SU26_46", exam: "SU26", chapter: 3, question: "The dataset has four columns. Exclude Student ID from k-means input matrix:", options: ["A. True", "B. False"], answer: "A", explanation: "Mẹo: Cột ID định danh không mang ý nghĩa khoảng cách hình học nên phải loại bỏ trước khi chạy K-means -> True." },
+            { id: "SU26_47", exam: "SU26", chapter: 11, question: "The following statement will return SELECT '123a567' ~ '87'", options: ["A. True", "B. False", "C. Error", "D. Empty"], answer: "B", explanation: "Mẹo: Chuỗi '123a567' không chứa '87' -> False." },
+            { id: "SU26_48", exam: "SU26", chapter: 4, question: "The following formula is used to calculate the centroid (xc, yc) of m points in k-means...", options: ["A. calculate the centroid (xc, yc)", "B. compute the distance"], answer: "A", explanation: "Mẹo: Công thức trung bình tọa độ dùng để tính tâm cụm (centroid)." },
+            { id: "SU26_49", exam: "SU26", chapter: 2, question: "What decision does a data scientist need to make regarding model building?", options: ["A. Deciding whether building one comprehensive model or many models on partitions is best", "B. Always building the simplest possible model", "C. Building models only on randomly selected subsets", "D. Building a model that ignores all data partitions"], answer: "A", explanation: "Mẹo: Cân nhắc xây dựng 1 mô hình tổng quát hay nhiều mô hình cho từng phân vùng dữ liệu." },
+            { id: "SU26_50", exam: "SU26", chapter: 3, question: "Correct statement used to add an additional column to dataset in R:", options: ["A. sales%per_order...", "B. sales+per_order...", "C. addcol...", "D. sales$per_order <- sales$sales_total/sales$num_of_orders"], answer: "D", explanation: "Mẹo: Dùng toán tử `$` để thêm cột mới trong R." },
+            { id: "SU26_51", exam: "SU26", chapter: 4, question: "If the task is to identify the effect of drug A compared to drug B, the null hypothesis H0 would be:", options: ["A. H0: Drug A and drug B have the same effect on patients", "B. H0: Drug A has a greater effect than drug B", "C. HA: Drug A and drug B have the same effect"], answer: "A", explanation: "Mẹo: Giả thuyết không (H0) luôn mang dấu '=' tức là không có sự khác biệt ('have the same effect')." },
+            { id: "SU26_52", exam: "SU26", chapter: 3, question: "Expected defaults for headers, column separators, and decimal point notations of read.delim() function are", options: ["A. Headers is false...", "B. Headers is true...", "C. Headers is true, column separators = \"\\t\", decimal point = \".\""], answer: "C", explanation: "Mẹo: read.delim() mặc định Headers = true, tách cột Tab (\"\\t\"), thập phân dấu chấm ('.')." },
+            { id: "SU26_53", exam: "SU26", chapter: 9, question: "Which of the followings is NOT a step in a text analysis process?", options: ["A. Parsing", "B. Search and retrieval", "C. Text mining", "D. Discover meaningful insights"], answer: "C", explanation: "Mẹo: Text mining là tên gọi chung của cả lĩnh vực, không phải một bước con trong quy trình." },
+            { id: "SU26_54", exam: "SU26", chapter: 12, question: "Who are someone who understands the domain area and usually benefits from the results?", options: ["A. Business user", "B. Project sponsor", "C. Business intelligence analyst", "D. Project Manager"], answer: "A", explanation: "Mẹo: Người hiểu nghiệp vụ chuyên môn và trực tiếp dùng kết quả hàng ngày -> Business user." },
+            { id: "SU26_55", exam: "SU26", chapter: 12, question: "Who typically need to share the code from analytical project and create technical documents describing implementation?", options: ["A. Data Engineer and Database Administrator (DBA)", "B. BI Analyst", "C. Project Manager", "D. Business User"], answer: "A", explanation: "Mẹo: Bàn giao code và tài liệu triển khai cho Data Engineer và DBA." },
+            { id: "SU26_56", exam: "SU26", chapter: 8, question: "What is the primary purpose of ARIMA models?", options: ["A. To perform time series analysis on dependent observations", "B. To analyze independent observations", "C. To categorize data into distinct clusters", "D. To generate random data"], answer: "A", explanation: "Mẹo: Phân tích chuỗi thời gian trên các quan sát có tính phụ thuộc ('dependent observations')." },
+            { id: "SU26_57", exam: "SU26", chapter: 1, question: "Organizations evolve their processes and see opportunities from Big Data. Move beyond traditional BI toward Data Science-driven projects...", options: ["A. Transitioning from traditional Business Intelligence to Data Science-driven projects for complex inquiries", "B. Returning to manual paper-based methods"], answer: "A", explanation: "Mẹo: Chuyển dịch từ BI truyền thống sang dự án Data Science để giải quyết các câu hỏi phức tạp." },
+            { id: "SU26_58", exam: "SU26", chapter: 5, question: "What measures the difference in the probability of X and Y appearing together in dataset compared to independent?", options: ["A. Lift", "B. Leverage", "C. Confidence", "D. Support"], answer: "B", explanation: "Mẹo: Độ chênh lệch xác suất ('difference in the probability') -> Leverage." },
+            { id: "SU26_59", exam: "SU26", chapter: 12, question: "Presentation for _____ contains high-level takeaways for executive-level stakeholders, with a few key messages?", options: ["A. Project Sponsors", "B. Analysts", "C. Technical people", "D. Database administrators"], answer: "A", explanation: "Mẹo: Dành cho cấp lãnh đạo điều hành ('executive-level stakeholders') -> Project Sponsors." },
+            { id: "SU26_60", exam: "SU26", chapter: 12, question: "Which of the followings uses terms and indexes produced by prior two steps to discover meaningful insights?", options: ["A. Parsing", "B. Search and retrieval", "C. Text mining", "D. Discover meaningful insights"], answer: "D", explanation: "Mẹo: Đáp án nằm ngay trong câu hỏi ('to discover meaningful insights') -> Discover meaningful insights." }
         ];
 
         // Khởi tạo State ứng dụng
         let questions = JSON.parse(localStorage.getItem('dta301_questions')) || defaultQuestions;
+        let practiceAnswers = {}; // Lưu lựa chọn của người dùng trong Tab Ngân hàng câu hỏi: { [q.id]: 'A' }
+        
         let currentExamQuestions = [];
         let currentExamIndex = 0;
         let userAnswers = {};
         let flaggedQuestions = new Set();
         let examTimerInterval = null;
         let timeLeft = 3600; // 60 phút
+        let examElapsedSeconds = 0;
+        let examMode = 'instant'; // 'instant' (Luyện tập trong thi) hoặc 'strict' (Thi thử tính giờ)
 
         // Chuyển Tab giao diện
         function switchTab(tabId) {
@@ -602,6 +643,7 @@
             if (tabId === 'overview') renderOverview();
             if (tabId === 'theory') renderTheory();
             if (tabId === 'practice') renderPractice();
+            if (tabId === 'exam') updateExamPreviewCount();
         }
 
         // Render Tổng quan các chương
@@ -665,7 +707,43 @@
             renderTheory();
         }
 
-        // Render Ngân hàng câu hỏi (Practice)
+        // ==========================================
+        // CHỨC NĂNG 1: ÔN TẬP THEO TỪNG CÂU (PRACTICE)
+        // ==========================================
+        function updatePracticeStats() {
+            const answeredIds = Object.keys(practiceAnswers);
+            let correctCount = 0;
+            answeredIds.forEach(id => {
+                const q = questions.find(item => item.id === id);
+                if (q && practiceAnswers[id] === q.answer) {
+                    correctCount++;
+                }
+            });
+            document.getElementById('practice-done-count').innerText = answeredIds.length;
+            document.getElementById('practice-correct-count').innerText = correctCount;
+        }
+
+        function selectPracticeOption(qId, letter) {
+            // Nếu đã chọn rồi thì không cho đổi trực tiếp (bấm "Làm lại" để chọn lại)
+            if (practiceAnswers[qId]) return;
+            practiceAnswers[qId] = letter;
+            updatePracticeStats();
+            renderPractice();
+        }
+
+        function retryPracticeQuestion(qId) {
+            delete practiceAnswers[qId];
+            updatePracticeStats();
+            renderPractice();
+        }
+
+        function resetAllPractice() {
+            if (Object.keys(practiceAnswers).length === 0) return;
+            practiceAnswers = {};
+            updatePracticeStats();
+            renderPractice();
+        }
+
         function renderPractice() {
             const container = document.getElementById('practice-questions-list');
             const examFilter = document.getElementById('practice-exam-filter').value;
@@ -684,40 +762,122 @@
                 return;
             }
 
-            container.innerHTML = filtered.map((q, idx) => `
-                <div class="bg-slate-50 border border-slate-200 p-5 rounded-xl space-y-3">
-                    <div class="flex justify-between items-center text-xs">
-                        <span class="font-bold text-brand-600 bg-brand-50 px-2 py-0.5 rounded">Câu ${idx + 1} (${q.id})</span>
-                        <div class="space-x-2">
-                            <span class="bg-slate-200 text-slate-700 px-2 py-0.5 rounded">Đề: ${q.exam}</span>
-                            <span class="bg-purple-100 text-purple-700 px-2 py-0.5 rounded">Chương ${q.chapter}</span>
+            container.innerHTML = filtered.map((q, idx) => {
+                const selectedLetter = practiceAnswers[q.id]; // undefined nếu chưa chọn
+                const hasAnswered = Boolean(selectedLetter);
+                const isUserRight = hasAnswered && (selectedLetter === q.answer);
+
+                return `
+                <div id="pq-${q.id}" class="bg-slate-50 border ${hasAnswered ? (isUserRight ? 'border-emerald-300' : 'border-rose-300') : 'border-slate-200'} p-5 rounded-xl space-y-3 transition">
+                    <div class="flex flex-wrap justify-between items-center text-xs gap-2">
+                        <div class="flex items-center space-x-2">
+                            <span class="font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded">Câu ${idx + 1} (${q.id})</span>
+                            ${hasAnswered ? (
+                                isUserRight 
+                                ? `<span class="bg-emerald-100 text-emerald-700 font-bold px-2.5 py-1 rounded"><i class="fa-solid fa-circle-check mr-1"></i> Chính xác!</span>`
+                                : `<span class="bg-rose-100 text-rose-700 font-bold px-2.5 py-1 rounded"><i class="fa-solid fa-circle-xmark mr-1"></i> Sai rồi!</span>`
+                            ) : `<span class="text-slate-400 italic">Chưa trả lời</span>`}
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            ${hasAnswered ? `
+                                <button onclick="retryPracticeQuestion('${q.id}')" class="text-slate-600 hover:text-brand-600 bg-white border border-slate-200 px-2.5 py-1 rounded font-medium transition">
+                                    <i class="fa-solid fa-rotate-right mr-1"></i> Làm lại
+                                </button>
+                            ` : ''}
+                            <span class="bg-slate-200 text-slate-700 px-2 py-1 rounded">Đề: ${q.exam}</span>
+                            <span class="bg-purple-100 text-purple-700 px-2 py-1 rounded">Chương ${q.chapter}</span>
                         </div>
                     </div>
-                    <p class="font-semibold text-slate-900 text-sm">${q.question}</p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+
+                    <p class="font-semibold text-slate-900 text-sm leading-relaxed">${q.question}</p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                         ${q.options.map(opt => {
                             const optLetter = opt.charAt(0);
-                            const isCorrect = optLetter === q.answer;
-                            return `<div class="p-2.5 rounded-lg border text-xs font-medium ${isCorrect ? 'bg-emerald-50 border-emerald-300 text-emerald-900 font-bold' : 'bg-white border-slate-200 text-slate-700'}">
-                                ${opt} ${isCorrect ? '<i class="fa-solid fa-check text-emerald-600 ml-1"></i>' : ''}
-                            </div>`;
+                            const isCorrectOpt = optLetter === q.answer;
+                            const isSelectedOpt = optLetter === selectedLetter;
+
+                            let btnStyle = "bg-white border-slate-200 text-slate-700 hover:border-brand-400 hover:bg-brand-50/50 cursor-pointer";
+                            let iconHtml = "";
+
+                            if (hasAnswered) {
+                                if (isCorrectOpt) {
+                                    btnStyle = "bg-emerald-50 border-emerald-400 text-emerald-900 font-bold shadow-sm cursor-default";
+                                    iconHtml = '<i class="fa-solid fa-circle-check text-emerald-600 ml-2"></i>';
+                                } else if (isSelectedOpt && !isCorrectOpt) {
+                                    btnStyle = "bg-rose-50 border-rose-400 text-rose-900 font-semibold cursor-default";
+                                    iconHtml = '<i class="fa-solid fa-circle-xmark text-rose-600 ml-2"></i>';
+                                } else {
+                                    btnStyle = "bg-white border-slate-200 text-slate-400 opacity-75 cursor-default";
+                                }
+                            }
+
+                            return `
+                                <button type="button" onclick="selectPracticeOption('${q.id}', '${optLetter}')" ${hasAnswered ? 'disabled' : ''} class="text-left p-3 rounded-xl border text-xs font-medium transition flex items-center justify-between ${btnStyle}">
+                                    <span>${opt}</span>
+                                    ${iconHtml}
+                                </button>
+                            `;
                         }).join('')}
                     </div>
-                    <div class="text-xs text-slate-600 bg-white p-3 rounded-lg border border-slate-200 mt-2">
-                        <strong class="text-emerald-700"><i class="fa-solid fa-circle-check mr-1"></i> Đáp án chuẩn: ${q.answer}</strong>
-                        <p class="mt-1 text-slate-500">${q.explanation || 'Đề chuẩn học phần DTA301.'}</p>
-                    </div>
+
+                    ${hasAnswered ? `
+                        <div class="text-xs bg-white p-3.5 rounded-xl border ${isUserRight ? 'border-emerald-200' : 'border-amber-200'} mt-3 space-y-1.5 shadow-sm">
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold ${isUserRight ? 'text-emerald-700' : 'text-rose-700'}">
+                                    ${isUserRight 
+                                        ? `<i class="fa-solid fa-check-double mr-1"></i> Bạn đã chọn đúng đáp án ${q.answer}` 
+                                        : `<i class="fa-solid fa-triangle-exclamation mr-1"></i> Bạn chọn ${selectedLetter} — Đáp án đúng là: <span class="text-emerald-700 underline">${q.answer}</span>`}
+                                </span>
+                            </div>
+                            <div class="text-slate-600 leading-relaxed pt-1 border-t border-slate-100">
+                                <span class="font-semibold text-amber-600"><i class="fa-solid fa-lightbulb mr-1"></i> Giải thích & Mẹo:</span> 
+                                ${q.explanation || 'Đáp án chuẩn theo giáo trình học phần DTA301.'}
+                            </div>
+                        </div>
+                    ` : ''}
                 </div>
-            `).join('');
+                `;
+            }).join('');
         }
 
         function filterPracticeQuestions() {
             renderPractice();
         }
 
-        // --- EXAM SIMULATION LOGIC ---
+        // ==========================================================
+        // CHỨC NĂNG 2: LUYỆN TẬP TRONG THI & THI THỬ (EXAM SIMULATION)
+        // ==========================================================
+        function toggleExamModeUI() {
+            const selectedMode = document.querySelector('input[name="exam-mode"]:checked').value;
+            const practiceCard = document.getElementById('mode-card-practice');
+            const strictCard = document.getElementById('mode-card-strict');
+            const timePreview = document.getElementById('exam-time-preview');
+
+            if (selectedMode === 'instant') {
+                practiceCard.classList.add('border-2', 'border-brand-500', 'shadow-sm');
+                practiceCard.classList.remove('border', 'border-slate-200');
+                strictCard.classList.remove('border-2', 'border-brand-500', 'shadow-sm');
+                strictCard.classList.add('border', 'border-slate-200');
+                timePreview.innerText = 'Tự do (Không giới hạn)';
+            } else {
+                strictCard.classList.add('border-2', 'border-brand-500', 'shadow-sm');
+                strictCard.classList.remove('border', 'border-slate-200');
+                practiceCard.classList.remove('border-2', 'border-brand-500', 'shadow-sm');
+                practiceCard.classList.add('border', 'border-slate-200');
+                timePreview.innerText = '60 phút (Đếm ngược)';
+            }
+        }
+
+        function updateExamPreviewCount() {
+            const source = document.getElementById('exam-source-select').value;
+            const count = source === 'all' ? questions.length : questions.filter(q => q.exam === source).length;
+            document.getElementById('exam-count-preview').innerText = `${count} câu`;
+        }
+
         function startExam() {
             const source = document.getElementById('exam-source-select').value;
+            examMode = document.querySelector('input[name="exam-mode"]:checked').value;
             
             if (source === 'all') {
                 currentExamQuestions = [...questions].sort(() => 0.5 - Math.random());
@@ -734,10 +894,36 @@
             userAnswers = {};
             flaggedQuestions.clear();
             timeLeft = 3600;
+            examElapsedSeconds = 0;
 
             document.getElementById('exam-setup').classList.add('hidden');
             document.getElementById('exam-result').classList.add('hidden');
             document.getElementById('exam-room').classList.remove('hidden');
+
+            // Cập nhật badge & chú thích bảng điều hướng theo chế độ
+            const modeBadge = document.getElementById('exam-mode-badge');
+            const legend = document.getElementById('palette-legend');
+            if (examMode === 'instant') {
+                modeBadge.innerText = 'Luyện tập trong thi (Xem giải thích ngay)';
+                modeBadge.className = 'text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-100 text-amber-800';
+                document.getElementById('exam-timer-label').innerText = 'Thời gian đã luyện';
+                legend.innerHTML = `
+                    <div class="flex items-center space-x-2"><span class="w-3 h-3 bg-emerald-100 border border-emerald-400 rounded-sm inline-block"></span><span>Trả lời đúng</span></div>
+                    <div class="flex items-center space-x-2"><span class="w-3 h-3 bg-rose-100 border border-rose-400 rounded-sm inline-block"></span><span>Trả lời sai</span></div>
+                    <div class="flex items-center space-x-2"><span class="w-3 h-3 bg-amber-100 border border-amber-400 rounded-sm inline-block"></span><span>Cắm cờ</span></div>
+                    <div class="flex items-center space-x-2"><span class="w-3 h-3 bg-slate-100 border border-slate-300 rounded-sm inline-block"></span><span>Chưa làm</span></div>
+                `;
+            } else {
+                modeBadge.innerText = 'Thi thử tính giờ';
+                modeBadge.className = 'text-xs font-semibold px-2.5 py-1 rounded-full bg-rose-100 text-rose-800';
+                document.getElementById('exam-timer-label').innerText = 'Thời gian còn lại';
+                legend.innerHTML = `
+                    <div class="flex items-center space-x-2"><span class="w-3 h-3 bg-brand-600 rounded-sm inline-block"></span><span>Đang chọn</span></div>
+                    <div class="flex items-center space-x-2"><span class="w-3 h-3 bg-emerald-100 border border-emerald-400 rounded-sm inline-block"></span><span>Đã làm</span></div>
+                    <div class="flex items-center space-x-2"><span class="w-3 h-3 bg-amber-100 border border-amber-400 rounded-sm inline-block"></span><span>Cắm cờ</span></div>
+                    <div class="flex items-center space-x-2"><span class="w-3 h-3 bg-slate-100 border border-slate-300 rounded-sm inline-block"></span><span>Chưa làm</span></div>
+                `;
+            }
 
             renderExamPalette();
             loadExamQuestion(0);
@@ -746,16 +932,29 @@
 
         function startExamTimer() {
             if (examTimerInterval) clearInterval(examTimerInterval);
-            examTimerInterval = setInterval(() => {
-                timeLeft--;
-                let m = Math.floor(timeLeft / 60);
-                let s = timeLeft % 60;
-                document.getElementById('exam-timer').innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
-                if (timeLeft <= 0) {
-                    clearInterval(examTimerInterval);
-                    submitExam();
-                }
-            }, 1000);
+            
+            if (examMode === 'instant') {
+                document.getElementById('exam-timer').innerText = '00:00';
+                examTimerInterval = setInterval(() => {
+                    examElapsedSeconds++;
+                    let m = Math.floor(examElapsedSeconds / 60);
+                    let s = examElapsedSeconds % 60;
+                    document.getElementById('exam-timer').innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+                }, 1000);
+            } else {
+                document.getElementById('exam-timer').innerText = '60:00';
+                examTimerInterval = setInterval(() => {
+                    timeLeft--;
+                    examElapsedSeconds++;
+                    let m = Math.floor(timeLeft / 60);
+                    let s = timeLeft % 60;
+                    document.getElementById('exam-timer').innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+                    if (timeLeft <= 0) {
+                        clearInterval(examTimerInterval);
+                        submitExam();
+                    }
+                }, 1000);
+            }
         }
 
         function loadExamQuestion(index) {
@@ -767,18 +966,73 @@
             document.getElementById('exam-question-text').innerText = q.question;
 
             const optContainer = document.getElementById('exam-options-container');
+            const feedbackContainer = document.getElementById('exam-instant-feedback');
             const selectedOpt = userAnswers[index];
+            const hasAnswered = Boolean(selectedOpt);
 
-            optContainer.innerHTML = q.options.map(opt => {
-                const letter = opt.charAt(0);
-                const isChecked = selectedOpt === letter;
-                return `
-                    <label class="flex items-center p-3 rounded-xl border cursor-pointer transition ${isChecked ? 'bg-brand-50 border-brand-500 text-brand-900 font-semibold shadow-sm' : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-50'}">
-                        <input type="radio" name="exam-option" value="${letter}" ${isChecked ? 'checked' : ''} onchange="selectExamAnswer(${index}, '${letter}')" class="mr-3 text-brand-600 focus:ring-brand-500">
-                        <span class="text-sm">${opt}</span>
-                    </label>
-                `;
-            }).join('');
+            if (examMode === 'instant') {
+                // Chế độ Luyện tập trong thi: Chọn xong hiện đúng/sai & giải thích ngay
+                optContainer.innerHTML = q.options.map(opt => {
+                    const letter = opt.charAt(0);
+                    const isCorrectOpt = letter === q.answer;
+                    const isSelectedOpt = letter === selectedOpt;
+
+                    let styleClass = 'bg-white border-slate-200 text-slate-700 hover:bg-slate-50 cursor-pointer';
+                    let icon = '';
+
+                    if (hasAnswered) {
+                        if (isCorrectOpt) {
+                            styleClass = 'bg-emerald-50 border-emerald-400 text-emerald-900 font-bold shadow-sm';
+                            icon = '<i class="fa-solid fa-circle-check text-emerald-600 ml-auto"></i>';
+                        } else if (isSelectedOpt) {
+                            styleClass = 'bg-rose-50 border-rose-400 text-rose-900 font-semibold';
+                            icon = '<i class="fa-solid fa-circle-xmark text-rose-600 ml-auto"></i>';
+                        } else {
+                            styleClass = 'bg-white border-slate-200 text-slate-400 opacity-75';
+                        }
+                    }
+
+                    return `
+                        <button type="button" onclick="selectExamAnswer(${index}, '${letter}')" class="w-full text-left flex items-center p-3.5 rounded-xl border transition ${styleClass}">
+                            <span class="text-sm">${opt}</span>
+                            ${icon}
+                        </button>
+                    `;
+                }).join('');
+
+                if (hasAnswered) {
+                    const isRight = selectedOpt === q.answer;
+                    feedbackContainer.classList.remove('hidden');
+                    feedbackContainer.innerHTML = `
+                        <div class="p-4 rounded-xl border ${isRight ? 'bg-emerald-50/70 border-emerald-200' : 'bg-amber-50/70 border-amber-200'} space-y-1.5 text-sm">
+                            <div class="font-bold ${isRight ? 'text-emerald-700' : 'text-rose-700'}">
+                                ${isRight 
+                                    ? `<i class="fa-solid fa-circle-check mr-1"></i> Chính xác! Đáp án đúng là ${q.answer}.` 
+                                    : `<i class="fa-solid fa-circle-xmark mr-1"></i> Chưa chính xác (Bạn chọn ${selectedOpt}). Đáp án đúng là ${q.answer}.`}
+                            </div>
+                            <div class="text-slate-700 text-xs leading-relaxed pt-1 border-t border-slate-200/60">
+                                <strong class="text-amber-700"><i class="fa-solid fa-lightbulb mr-1"></i> Giải thích & Mẹo nhớ:</strong> ${q.explanation || 'Đáp án chuẩn học phần DTA301.'}
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    feedbackContainer.classList.add('hidden');
+                    feedbackContainer.innerHTML = '';
+                }
+            } else {
+                // Chế độ Thi thử tính giờ: Ẩn đáp án cho tới khi nộp bài
+                feedbackContainer.classList.add('hidden');
+                optContainer.innerHTML = q.options.map(opt => {
+                    const letter = opt.charAt(0);
+                    const isChecked = selectedOpt === letter;
+                    return `
+                        <label class="flex items-center p-3.5 rounded-xl border cursor-pointer transition ${isChecked ? 'bg-brand-50 border-brand-500 text-brand-900 font-semibold shadow-sm' : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-50'}">
+                            <input type="radio" name="exam-option" value="${letter}" ${isChecked ? 'checked' : ''} onchange="selectExamAnswer(${index}, '${letter}')" class="mr-3 text-brand-600 focus:ring-brand-500">
+                            <span class="text-sm">${opt}</span>
+                        </label>
+                    `;
+                }).join('');
+            }
 
             // Flag button update
             const flagBtn = document.getElementById('flag-btn');
@@ -795,8 +1049,12 @@
 
         function selectExamAnswer(qIndex, letter) {
             userAnswers[qIndex] = letter;
-            updateExamPalette();
-            updateAnsweredCount();
+            if (examMode === 'instant') {
+                loadExamQuestion(qIndex);
+            } else {
+                updateExamPalette();
+                updateAnsweredCount();
+            }
         }
 
         function toggleFlagCurrent() {
@@ -831,7 +1089,7 @@
         }
 
         function updateExamPalette() {
-            currentExamQuestions.forEach((_, idx) => {
+            currentExamQuestions.forEach((q, idx) => {
                 const btn = document.getElementById(`palette-btn-${idx}`);
                 if (!btn) return;
                 
@@ -843,7 +1101,13 @@
                 if (flaggedQuestions.has(idx)) {
                     classes += "bg-amber-100 border-amber-400 text-amber-800";
                 } else if (userAnswers[idx]) {
-                    classes += "bg-emerald-100 border-emerald-400 text-emerald-800";
+                    if (examMode === 'instant') {
+                        classes += (userAnswers[idx] === q.answer) 
+                            ? "bg-emerald-100 border-emerald-400 text-emerald-800" 
+                            : "bg-rose-100 border-rose-400 text-rose-800";
+                    } else {
+                        classes += "bg-emerald-100 border-emerald-400 text-emerald-800";
+                    }
                 } else {
                     classes += "bg-slate-100 border-slate-200 text-slate-700";
                 }
@@ -858,7 +1122,7 @@
         }
 
         function confirmSubmitExam() {
-            if (confirm("Bạn có chắc chắn muốn nộp bài thi không?")) {
+            if (confirm("Bạn có chắc chắn muốn kết thúc và chấm điểm bài làm không?")) {
                 submitExam();
             }
         }
@@ -875,19 +1139,73 @@
 
             const total = currentExamQuestions.length;
             const score10 = ((correctCount / total) * 10).toFixed(1);
-            const timeSpentMinutes = Math.floor((3600 - timeLeft) / 60);
+            const mins = Math.floor(examElapsedSeconds / 60);
+            const secs = examElapsedSeconds % 60;
 
             document.getElementById('res-score').innerText = score10;
             document.getElementById('res-correct').innerText = `${correctCount}/${total}`;
-            document.getElementById('res-time').innerText = `${timeSpentMinutes} phút`;
+            document.getElementById('res-time').innerText = mins > 0 ? `${mins}p ${secs}s` : `${secs} giây`;
+
+            renderExamReviewList();
 
             document.getElementById('exam-room').classList.add('hidden');
             document.getElementById('exam-result').classList.remove('hidden');
         }
 
+        function renderExamReviewList() {
+            const reviewContainer = document.getElementById('exam-review-list');
+            reviewContainer.innerHTML = `
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
+                    <h3 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-3">
+                        <i class="fa-solid fa-list-check text-brand-600 mr-2"></i> Chi tiết bài làm & Giải thích từng câu
+                    </h3>
+                    <div class="space-y-4">
+                        ${currentExamQuestions.map((q, idx) => {
+                            const userChoice = userAnswers[idx];
+                            const isCorrect = userChoice === q.answer;
+                            return `
+                                <div class="p-4 rounded-xl border ${isCorrect ? 'bg-emerald-50/40 border-emerald-200' : 'bg-rose-50/40 border-rose-200'} space-y-2.5">
+                                    <div class="flex flex-wrap justify-between items-center text-xs gap-2">
+                                        <span class="font-bold text-slate-800">Câu ${idx + 1} (${q.id} - Chương ${q.chapter})</span>
+                                        ${!userChoice 
+                                            ? `<span class="bg-slate-200 text-slate-700 px-2.5 py-0.5 rounded font-semibold">Bỏ trống (Đáp án: ${q.answer})</span>`
+                                            : isCorrect 
+                                                ? `<span class="bg-emerald-100 text-emerald-700 px-2.5 py-0.5 rounded font-bold"><i class="fa-solid fa-check mr-1"></i> Đúng (${userChoice})</span>`
+                                                : `<span class="bg-rose-100 text-rose-700 px-2.5 py-0.5 rounded font-bold"><i class="fa-solid fa-xmark mr-1"></i> Sai (Chọn ${userChoice} | Đúng: ${q.answer})</span>`
+                                        }
+                                    </div>
+                                    <p class="font-semibold text-sm text-slate-900">${q.question}</p>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                                        ${q.options.map(opt => {
+                                            const letter = opt.charAt(0);
+                                            const isAns = letter === q.answer;
+                                            const isPicked = letter === userChoice;
+                                            let cls = 'bg-white border-slate-200 text-slate-600';
+                                            if (isAns) cls = 'bg-emerald-100 border-emerald-400 text-emerald-900 font-bold';
+                                            else if (isPicked) cls = 'bg-rose-100 border-rose-400 text-rose-900 font-semibold';
+                                            return `<div class="p-2.5 rounded-lg border ${cls}">${opt}</div>`;
+                                        }).join('')}
+                                    </div>
+                                    <div class="text-xs text-slate-600 bg-white p-3 rounded-lg border border-slate-200">
+                                        <strong class="text-amber-600"><i class="fa-solid fa-lightbulb mr-1"></i> Giải thích & Mẹo:</strong> ${q.explanation || 'Đáp án chuẩn học phần DTA301.'}
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function toggleExamReviewSection() {
+            const list = document.getElementById('exam-review-list');
+            list.scrollIntoView({ behavior: 'smooth' });
+        }
+
         function resetExam() {
             document.getElementById('exam-result').classList.add('hidden');
             document.getElementById('exam-setup').classList.remove('hidden');
+            updateExamPreviewCount();
         }
 
         // --- ADMIN / DATA MANAGEMENT ---
@@ -914,6 +1232,8 @@
             if (confirm('Khôi phục về dữ liệu mặc định ban đầu? Mọi câu hỏi bạn thêm mới sẽ bị xóa.')) {
                 localStorage.removeItem('dta301_questions');
                 questions = [...defaultQuestions];
+                practiceAnswers = {};
+                updatePracticeStats();
                 renderOverview();
                 renderPractice();
                 alert('Đã khôi phục dữ liệu gốc thành công!');
@@ -923,6 +1243,7 @@
         // Khởi chạy khi tải trang
         window.onload = function() {
             renderOverview();
+            updateExamPreviewCount();
         };
     </script>
 </body>
